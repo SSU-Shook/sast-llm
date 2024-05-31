@@ -27,7 +27,6 @@ SAST와 직접적인 관련이 없는, 간단한 유틸리티 함수들
 
 ## code_style_profile_rules.md
 GPT 어시스턴트에 업로드되는 코드 스타일 프로파일 포멧에 대한 설명 파일입니다.  
-(profile_code_style 함수 테스트)
 
 ## comment_added_codes
 LLM으로 취약점 패치 전에 취약점 정보를 주석에 추가한 코드가 저장되는 디렉터리입니다.
