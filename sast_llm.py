@@ -144,7 +144,7 @@ def download_file(file_id, download_path):
     '''
     파일 id를 입력받아, 다운로드 경로에 파일을 다운로드한다.
     '''
-    file_path = "download_path"
+    file_path = download_path
     directory = os.path.dirname(file_path)
     if not os.path.exists(directory):
         os.makedirs(directory, exist_ok=True) # 경로상의 디렉터리가 없으면 생성
