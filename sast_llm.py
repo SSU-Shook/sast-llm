@@ -141,6 +141,11 @@ def download_file(file_id, download_path):
     '''
     파일 id를 입력받아, 다운로드 경로에 파일을 다운로드한다.
     '''
+    file_path = "download_path"
+    directory = os.path.dirname(file_path)
+    if not os.path.exists(directory):
+        os.makedirs(directory, exist_ok=True) # 경로상의 디렉터리가 없으면 생성
+
     with open(download_path, "wb") as f:
         content = client.files.content(file_id).read()
         print(content)
@@ -328,6 +333,7 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
     패치된 파일을 다운로드하고, 특정 경로에 patched_원본파일이름 으로 저장한다.
     code_patch_result {'patched_files':{원본경로:패치된파일경로, ...}, 'vulnerabilities_by_file':vulnerabilities_dict_by_file} 반환
     '''
+    patched_project_save_path = get_patched_code_save_directory(project_path)
     for code_path, vulnerabilities in vulnerabilities_dict_by_file.items():
         patch_thread = client.beta.threads.create()
 
@@ -415,7 +421,6 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
         print(f"patched_code_file_id: {patched_code_file_id}")
 
         
-        patched_project_save_path = get_patched_code_save_directory(project_path)
         patched_code_save_path = os.path.join(patched_project_save_path, get_relative_path(project_path, code_path))
         patched_code_save_path = os.path.abspath(patched_code_save_path)
 
