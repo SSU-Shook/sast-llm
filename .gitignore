@@ -1,6 +1,8 @@
 *.key
 *.zip
 
+# comment_added_codes/
+
 
 #env/
 

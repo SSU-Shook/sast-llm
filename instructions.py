@@ -45,6 +45,11 @@ Analyze the attached source code files and output ESLint_rules and Prettier_rule
 '''
 
 
+prompt_patch_vulnerabilities = '''
+You patch the vulnerability and save the patched code as a new file.
+'''
+
+
 
 prompt_explain_patch = '''
 Analyze the attached source code and explain what vulnerabilities existed and how they were patched.

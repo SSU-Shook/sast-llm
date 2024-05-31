@@ -9,6 +9,9 @@ from openai import OpenAI
 import tempfile
 import instructions
 import csv
+import uuid
+import shutil
+
 
 '''
 Todo
@@ -40,6 +43,19 @@ If helpful, add files and enable tools like Code Interpreter, File Search, and F
 4. Run the Assistant on the Thread to generate a response by calling the model and the tools.
 '''
 
+
+
+# 스크립트 파일의 절대 경로를 가져옵니다.
+script_directory = os.path.abspath(os.path.dirname(__file__))
+
+# 현재 작업 디렉터리를 스크립트가 있는 디렉터리로 변경합니다.
+os.chdir(script_directory)
+
+# 변경된 작업 디렉터리를 확인합니다.
+print("현재 작업 디렉터리:", os.getcwd())
+
+
+
 try:
     client = OpenAI(
         api_key=settings.LLM_API_KEY['openai'],
@@ -53,9 +69,12 @@ except:
     pass
 
 
+def generate_directory_name():
+    return str(uuid.uuid4())
+
+
 def get_file_name_from_path(file_path):
     return os.path.basename(file_path)
-
 
 
 
@@ -223,17 +242,17 @@ def parse_codeql_csv(csv_file_path):
     f.close()
 
     vulnerabilities_dict_list = list()
-    for vulnerability_list in vulnerabilities_list:
+    for vulnerability in vulnerabilities_list:
         vulnerability_dict = dict()
-        vulnerability_dict['name'] = vulnerability_list[0]
-        vulnerability_dict['description'] = vulnerability_list[1]
-        vulnerability_dict['severity'] = vulnerability_list[2]
-        vulnerability_dict['message'] = vulnerability_list[3]
-        vulnerability_dict['path'] = vulnerability_list[4]
-        vulnerability_dict['start_line'] = int(vulnerability_list[5])
-        vulnerability_dict['start_column'] = int(vulnerability_list[6])
-        vulnerability_dict['end_line'] = int(vulnerability_list[7])
-        vulnerability_dict['end_column'] = int(vulnerability_list[8])
+        vulnerability_dict['name'] = vulnerability[0]
+        vulnerability_dict['description'] = vulnerability[1]
+        vulnerability_dict['severity'] = vulnerability[2]
+        vulnerability_dict['message'] = vulnerability[3]
+        vulnerability_dict['path'] = vulnerability[4]
+        vulnerability_dict['start_line'] = int(vulnerability[5])
+        vulnerability_dict['start_column'] = int(vulnerability[6])
+        vulnerability_dict['end_line'] = int(vulnerability[7])
+        vulnerability_dict['end_column'] = int(vulnerability[8])
 
         #print(vulnerability_dict)
         vulnerabilities_dict_list.append(vulnerability_dict)
@@ -241,7 +260,14 @@ def parse_codeql_csv(csv_file_path):
     return vulnerabilities_dict_list
     
 
-def get_absolute_path(base_path, file_path):
+def get_full_path(base_path, file_path):
+    if file_path.startswith(base_path):
+        return file_path
+    
+    if file_path.startswith("/"):
+        file_path = './' + file_path
+
+    print(f'base_path: {base_path}, file_path: {file_path}')
     return os.path.abspath(os.path.join(base_path, file_path))
 
 
@@ -359,17 +385,104 @@ def profile_code_style(project_path, zero_shot_cot=False):
     return extracted_json_codes_from_llm_profile_result[-1] # json 문자열 형식으로 반환
 
 
+def extract_directory_name(directory_path):
+    '''
+    디렉터리 경로로부터 디렉터리 이름을 추출하여 반환한다.
+    '''
+    return os.path.basename(directory_path)
+
+
+'''
+copy_source_code_files 함수
+전체 폴더에서 취약점이 존재하는 파일과 상위 폴더만 복사하는 함수 
+이 함수는 원본 코드의 경로와, 이에 대응하는 복사본 코드의 경로를 반환한다.
+'''
+def copy_source_code_files(project_path, vulnerabilities_dict_by_file):
+    '''
+    취약점이 존재하는 파일과 상위 폴더만 복사한다.
+    '''
+
+    '''
+    복사할 때 유의할 점
+    폴더 이름이 같은 프로젝트를 여러 번 복사할 수도 있다.
+    이는 모두 서로 다른 프로젝트이므로 별도의 폴더에 저장해야한다.
+    이를 간단히 구현하기 위하여
+    comment_added_codes/임의문자열/프로젝트이름/**
+    형식으로 복사한다.
+    임의 문자열은 어떻게 정할까? 이를 위하여 generate_directory_name 함수를 만들었다.
+
+
+    내가 원하는 대로 구현하려면 모든 파일 경로는 절대경로로 저장되어야 한다.
+    이를 위한 점검 단계를 거치자.
+    '''
+
+    original_path_copied_path_dict = dict()
+
+    original_directory_name = extract_directory_name(project_path)
+    copied_directory_name = generate_directory_name()
+
+    copied_directory_path = os.path.join("comment_added_codes", copied_directory_name)
+    copied_directory_path = os.path.join(copied_directory_path, original_directory_name)
+    
+    os.makedirs(copied_directory_path)
+
+    original_path_copied_path_tuple_list = list()
+    for file_path in vulnerabilities_dict_by_file.keys():
+        file_relative_path = os.path.relpath(file_path, project_path)
+        copied_file_path = get_full_path(copied_directory_path, file_relative_path) #여기가 절대경로인게 문제
+        os.makedirs(os.path.dirname(copied_file_path), exist_ok=True)
+        shutil.copy(file_path, copied_file_path)
+
+        original_path_copied_path_dict[file_path] = copied_file_path
+        
+        
+    return original_path_copied_path_dict
+
+def forge_vulnerability_comment(vulnerability):
+    '''
+    취약점 정보를 입력받아 취약점에 대한 주석을 생성한다.
+    '''
+    comment = '/*'
+    comment += f'\tVulnerability name: {vulnerability["name"]}'
+    comment += f'\tVulnerability description: {vulnerability["description"]}'
+    comment += f'\tVulnerability message: {vulnerability["message"]}'
+    comment += '*/'
+
+    return comment
+
+
+def comment_source_code(file_path, vulnerabilities):
+    '''
+    코드 파일의 경로를 입력받아서 취약점 정보를 주석으로 추가한다.
+    '''
+    lines = []
+    with open(file_path, 'r', encoding='UTF8') as file:
+        lines = file.readlines()
+
+    for vulnerability in vulnerabilities:
+        comment = forge_vulnerability_comment(vulnerability)
+        lines[vulnerability['start_line'] - 1] = lines[vulnerability['start_line'] - 1][:-1] + (' ' + comment) + '\n'
+
+    with open(file_path, 'w', encoding='UTF8') as file:
+        file.writelines(lines)
+
 
 '''
 프로젝트 경로와 codeql csv 파일 경로를 입력받아 취약점을 패치함
 원래 파일과 패치된 파일의 경로를 원소로 가지는 튜플로 이루어진 배열 반환
 '''
-def patch_vulnerability(project_path, codeql_csv_path, code_style_profile=None, zero_shot_cot=False):
+def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None, zero_shot_cot=False):
     '''
     codeql csv 파일을 파싱하여 취약점 정보를 추출한다.
     '''
     vulnerabilities_dict = parse_codeql_csv(codeql_csv_path)
+    print("-"*50)
+    print("Vulnerabilities:")
+    for vulnerability in vulnerabilities_dict:
+        print(vulnerability)
+    print("-"*50)
 
+    
     
     '''
     같은 파일에 대한 취약점들끼리 모은다.
@@ -377,16 +490,37 @@ def patch_vulnerability(project_path, codeql_csv_path, code_style_profile=None, 
     '''
     vulnerabilities_dict_by_file = dict()
     for vulnerability in vulnerabilities_dict:
-        if vulnerability['path'] in vulnerabilities_dict_by_file:
-            vulnerabilities_dict_by_file[vulnerability['path']].append(vulnerability)
+        source_absolute_path = get_full_path(project_path, vulnerability['path'])
+        if source_absolute_path in vulnerabilities_dict_by_file:
+            vulnerabilities_dict_by_file[source_absolute_path].append(vulnerability)
         else:
-            vulnerabilities_dict_by_file[vulnerability['path']] = [vulnerability]
+            vulnerabilities_dict_by_file[source_absolute_path] = [vulnerability]
+    print("Vulnerabilities by file:")
+    for key, value in vulnerabilities_dict_by_file.items():
+        print(key, value)
+    print("-"*50)
 
     
+
     '''
     파일별로 주석으로 취약점 정보를 추가한다.
+    이를 위해서는 기존 파일을 복사해서 어딘가에 저장해야 한다.
+    어디에 저장할까?
+    comment_added_codes 폴더를 추가하자. (해당 폴더는 .gitignore에 추가)
+
+    comment_source_code 함수
+    이 함수는 코드 파일의 경로를 입력받아서 취약점 정보를 주석으로 추가한다.
+
     '''
 
+    original_path_copied_path_dict = copy_source_code_files(project_path, vulnerabilities_dict_by_file)
+    print(original_path_copied_path_dict)
+
+    for code_path, vulnerabilities in vulnerabilities_dict_by_file.items():
+        comment_source_code(original_path_copied_path_dict[code_path], vulnerabilities)
+        with open(original_path_copied_path_dict[code_path], 'r', encoding='UTF8') as file:
+            print(file.read())
+   
 
 
     '''
@@ -394,8 +528,53 @@ def patch_vulnerability(project_path, codeql_csv_path, code_style_profile=None, 
     패치된 파일을 다운로드하고, 특정 경로에 patched_원본파일이름 으로 저장한다.
     [(원본파일경로, 패치된파일경로), ...] 반환
     '''
+    
+    for code_path, vulnerabilities in vulnerabilities_dict_by_file.items():
+        patch_thread = client.beta.threads.create()
 
-    pass
+        fild_id_list = upload_files(get_file_list_from_path_list([original_path_copied_path_dict[code_path]]))
+        attachments_list = create_attachments_list(fild_id_list)
+
+        prompt = instructions.prompt_patch_vulnerabilities
+
+        message = client.beta.threads.messages.create(
+            thread_id=patch_thread.id,
+            role="user",
+            content=prompt,
+            attachments=attachments_list,
+        )
+
+        patch_run = client.beta.threads.runs.create(
+            thread_id=patch_thread.id,
+            assistant_id=get_assistant_id('patch_assistant')
+        )
+
+        start_time = time.time()
+
+        status = check_status(patch_run.id, patch_thread.id)
+        while status != 'completed':
+            time.sleep(1)
+            status = check_status(patch_run.id, patch_thread.id)
+
+        elapsed_time = time.time() - start_time
+        print("Elapsed time: {} minutes {} seconds".format(int((elapsed_time) // 60), int((elapsed_time) % 60)))
+        print(f'Status: {status}')
+        print('-'*50)
+
+        messages = client.beta.threads.messages.list(
+            thread_id=patch_thread.id
+        )
+
+        for message in messages:
+            print(message.content[0].text.value)
+            print('*'*50)
+        print('-'*50)
+
+        llm_patch_result = messages.data[0].content[0].text.value
+        print(llm_patch_result)
+        print('-'*50)
+
+    return llm_patch_result
 
 
 
