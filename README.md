@@ -21,3 +21,6 @@ LLM 입력 프롬프트를 포함하는 파일입니다.
 
 ### vulnerability_patch_test.py
 취약점 패치를 테스트 하는 스크립트입니다.
+
+### code_style_profile_rules.md
+GPT 어시스턴트에 업로드되는 코드 스타일 프로파일 포멧에 대한 설명 파일입니다.
