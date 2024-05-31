@@ -12,6 +12,9 @@ import csv
 import uuid
 import shutil
 
+from helper_utils import *
+from patch_utils import *
+
 
 '''
 Todo
@@ -69,52 +72,7 @@ except:
     pass
 
 
-def generate_directory_name():
-    return str(uuid.uuid4())
 
-
-def get_file_name_from_path(file_path):
-    return os.path.basename(file_path)
-
-
-
-def get_file_list_from_path_list(path_list):
-    '''
-    특정 경로의 디렉터리에서 .js 파일 리스트를 재귀적으로 탐색하여 반환한다.
-    '''
-    file_list = []
-    for path in path_list:
-        file_list.append({"filename": os.path.basename(path), "path":path})
-    return file_list
-
-
-def extract_code(text): 
-    '''
-    LLM의 출력을 입력받아 소스코드를 추출하여 반환한다.
-    반환 형태: [(언어, 코드), ...]
-    '''
-    try:
-        if '```' in text:
-            matches = re.findall(r'`{3}(.*?)\n(.*?)`{3}', text, re.DOTALL)
-            return matches
-
-        else:
-            return [text,]
-        
-    except Exception as exception:
-        return [text,]
-
-
-
-
-def diff_code(code1, code2):
-    '''
-    두 코드를 비교하여 diff를 반환
-    '''
-    code1 = code1.splitlines()
-    code2 = code2.splitlines()
-    diff = difflib.unified_diff(code1, code2, lineterm='')
-    return '\n'.join(diff)
 
 
 
@@ -144,21 +102,6 @@ def upload_file(file_path):
 
 
 
-def preprocess_code(file_path):
-    '''
-    파일에서 쉬뱅을 삭제한다.
-    '''
-    with open(file_path, 'r', encoding='UTF8') as file:
-        lines = file.readlines()
-    
-    if lines and lines[0].startswith('#!'):
-        lines = lines[1:]
-
-    temp_file = tempfile.NamedTemporaryFile(suffix='.js', delete=False, mode='w')
-    temp_file.writelines(lines)
-    temp_file.close()
-    
-    return temp_file.name
 
 
 
@@ -182,25 +125,6 @@ def get_assistant_id(assistant_type):
     return settings.ASSISTANT_ID[assistant_type]
 
 
-def get_js_file_list(directory_path):
-    '''
-    특정 경로의 디렉터리에서 .js 파일 리스트를 재귀적으로 탐색하여 반환한다.
-    '''
-    file_list = []
-    for path in glob.iglob(f'{directory_path}/**/*.js', recursive=True):
-        file_list.append({"filename": os.path.basename(path), "path":path})
-    return file_list
-
-
-
-def save_js_file_list_to_jsonl(file_list, jsonl_file_path):
-    '''
-    file_list를 jsonl 파일로 저장한다.
-    '''
-    with open(jsonl_file_path, "w") as f:
-        for file in file_list:
-            f.write(json.dumps(file) + "\n")
-
 
 
 def upload_files(file_list):
@@ -218,57 +142,7 @@ def upload_files(file_list):
 
 
 
-def create_attachments_list(file_id_list):
-    '''
-    파일 id 리스트를 입력받아 attachments 리스트를 생성한다.
-    '''
-    attachments_list = []
-    for file in file_id_list:
-        attachments_list.append({"file_id": file, "tools": [{"type": "file_search"}]}) 
-    return attachments_list
 
-
-def parse_codeql_csv(csv_file_path):
-    '''
-    Parses the output CSV file from CodeQL and returns a dictionary.
-    '''
-
-    f = open(csv_file_path, 'r', encoding='utf-8')
-    rdr = csv.reader(f)
-
-    vulnerabilities_list = list()
-    for line in rdr:
-        vulnerabilities_list.append(line)
-    f.close()
-
-    vulnerabilities_dict_list = list()
-    for vulnerability in vulnerabilities_list:
-        vulnerability_dict = dict()
-        vulnerability_dict['name'] = vulnerability[0]
-        vulnerability_dict['description'] = vulnerability[1]
-        vulnerability_dict['severity'] = vulnerability[2]
-        vulnerability_dict['message'] = vulnerability[3]
-        vulnerability_dict['path'] = vulnerability[4]
-        vulnerability_dict['start_line'] = int(vulnerability[5])
-        vulnerability_dict['start_column'] = int(vulnerability[6])
-        vulnerability_dict['end_line'] = int(vulnerability[7])
-        vulnerability_dict['end_column'] = int(vulnerability[8])
-
-        #print(vulnerability_dict)
-        vulnerabilities_dict_list.append(vulnerability_dict)
-
-    return vulnerabilities_dict_list
-    
-
-def get_full_path(base_path, file_path):
-    if file_path.startswith(base_path):
-        return file_path
-    
-    if file_path.startswith("/"):
-        file_path = './' + file_path
-
-    print(f'base_path: {base_path}, file_path: {file_path}')
-    return os.path.abspath(os.path.join(base_path, file_path))
 
 
 
@@ -385,86 +259,7 @@ def profile_code_style(project_path, zero_shot_cot=False):
     return extracted_json_codes_from_llm_profile_result[-1] # json 문자열 형식으로 반환
 
 
-def extract_directory_name(directory_path):
-    '''
-    디렉터리 경로로부터 디렉터리 이름을 추출하여 반환한다.
-    '''
-    return os.path.basename(directory_path)
 
-
-'''
-copy_source_code_files 함수
-전체 폴더에서 취약점이 존재하는 파일과 상위 폴더만 복사하는 함수 
-이 함수는 원본 코드의 경로와, 이에 대응하는 복사본 코드의 경로를 반환한다.
-'''
-def copy_source_code_files(project_path, vulnerabilities_dict_by_file):
-    '''
-    취약점이 존재하는 파일과 상위 폴더만 복사한다.
-    '''
-
-    '''
-    복사할 때 유의할 점
-    폴더 이름이 같은 프로젝트를 여러 번 복사할 수도 있다.
-    이는 모두 서로 다른 프로젝트이므로 별도의 폴더에 저장해야한다.
-    이를 간단히 구현하기 위하여
-    comment_added_codes/임의문자열/프로젝트이름/**
-    형식으로 복사한다.
-    임의 문자열은 어떻게 정할까? 이를 위하여 generate_directory_name 함수를 만들었다.
-
-
-    내가 원하는 대로 구현하려면 모든 파일 경로는 절대경로로 저장되어야 한다.
-    이를 위한 점검 단계를 거치자.
-    '''
-
-    original_path_copied_path_dict = dict()
-
-    original_directory_name = extract_directory_name(project_path)
-    copied_directory_name = generate_directory_name()
-
-    copied_directory_path = os.path.join("comment_added_codes", copied_directory_name)
-    copied_directory_path = os.path.join(copied_directory_path, original_directory_name)
-    
-    os.makedirs(copied_directory_path)
-
-    original_path_copied_path_tuple_list = list()
-    for file_path in vulnerabilities_dict_by_file.keys():
-        file_relative_path = os.path.relpath(file_path, project_path)
-        copied_file_path = get_full_path(copied_directory_path, file_relative_path) #여기가 절대경로인게 문제
-        os.makedirs(os.path.dirname(copied_file_path), exist_ok=True)
-        shutil.copy(file_path, copied_file_path)
-
-        original_path_copied_path_dict[file_path] = copied_file_path
-        
-        
-    return original_path_copied_path_dict
-
-def forge_vulnerability_comment(vulnerability):
-    '''
-    취약점 정보를 입력받아 취약점에 대한 주석을 생성한다.
-    '''
-    comment = '/*'
-    comment += f'\tVulnerability name: {vulnerability["name"]}'
-    comment += f'\tVulnerability description: {vulnerability["description"]}'
-    comment += f'\tVulnerability message: {vulnerability["message"]}'
-    comment += '*/'
-
-    return comment
-
-
-def comment_source_code(file_path, vulnerabilities):
-    '''
-    코드 파일의 경로를 입력받아서 취약점 정보를 주석으로 추가한다.
-    '''
-    lines = []
-    with open(file_path, 'r', encoding='UTF8') as file:
-        lines = file.readlines()
-
-    for vulnerability in vulnerabilities:
-        comment = forge_vulnerability_comment(vulnerability)
-        lines[vulnerability['start_line'] - 1] = lines[vulnerability['start_line'] - 1][:-1] + (' ' + comment) + '\n'
-
-    with open(file_path, 'w', encoding='UTF8') as file:
-        file.writelines(lines)
 
 
 '''
@@ -573,6 +368,23 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
         llm_patch_result = messages.data[0].content[0].text.value
         print(llm_patch_result)
         print('-'*50)
+
+
+        # https://platform.openai.com/docs/api-reference/files/retrieve-contents
+        '''
+        LLM이 응답한 파일을 다운받아야 한다.
+        다운받는 방법은 위 링크에서 확인할 수 있다.
+        그렇다면 다운받은 다음에 어디에 저장할까?
+        patched_codes 폴더에 uuid 값으로 폴더를 만든 다음에, 그 안에 코드베이스와 같은 디렉터리 구조를 만들고 원본 파일 이름으로 저장하자.
+        그리고 다음과 같이 반환하자
+        {
+            'patched_file_path': [
+                (원본파일경로, 패치된파일경로),
+                ...
+            ],
+            'vulnerabilities_by_file': vulnerabilities_dict_by_file_name
+        }
+        '''
 
     return llm_patch_result
 
