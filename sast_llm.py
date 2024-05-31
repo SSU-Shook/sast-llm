@@ -365,6 +365,13 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
             print('*'*50)
         print('-'*50)
 
+
+        for message in messages:
+            print(message)
+            print('*'*50)
+        print('-'*50)
+
+
         llm_patch_result = messages.data[0].content[0].text.value
         print(llm_patch_result)
         print('-'*50)
@@ -385,6 +392,7 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
             'vulnerabilities_by_file': vulnerabilities_dict_by_file_name
         }
         '''
+
 
     return llm_patch_result
 

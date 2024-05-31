@@ -73,11 +73,14 @@ def preprocess_code(file_path):
     if lines and lines[0].startswith('#!'):
         lines = lines[1:]
 
-    temp_file = tempfile.NamedTemporaryFile(suffix='.js', delete=False, mode='w')
-    temp_file.writelines(lines)
-    temp_file.close()
+    temp_dir = tempfile.gettempdir()
+    filename = get_file_name_from_path(file_path)
+    temp_file_path = os.path.join(temp_dir, filename)
+
+    with open(file_path, 'w', encoding='UTF8') as file:
+        file.writelines(lines)
     
-    return temp_file.name
+    return temp_file_path
 
 
 
