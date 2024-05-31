@@ -96,6 +96,11 @@ def extract_directory_name(directory_path):
 
 
 
+def reverse_dict(dictionary):
+    return {value: key for key, value in dictionary.items()}
+
+
+
 '''
 copy_source_code_files 함수
 전체 폴더에서 취약점이 존재하는 파일과 상위 폴더만 복사하는 함수 
@@ -141,3 +146,24 @@ def copy_source_code_files(project_path, vulnerabilities_dict_by_file):
         
         
     return original_path_copied_path_dict
+
+
+
+def get_patched_code_save_directory(project_path):
+    '''
+    패치된 코드를 저장할 디렉터리를 생성하고 반환한다.
+    '''
+    
+    base_directory_name = os.path.basename(project_path)
+    patched_code_save_directory = os.path.join("patched_codes", generate_directory_name())
+    patched_code_save_directory = os.path.join(patched_code_save_directory, base_directory_name)
+    os.makedirs(patched_code_save_directory)
+    return patched_code_save_directory
+
+
+
+def get_relative_path(project_path, code_path):
+    '''
+    project_path로부터 code_path까지의 상대 경로를 구한다.
+    '''
+    return os.path.relpath(code_path, project_path)

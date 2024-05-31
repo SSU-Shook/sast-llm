@@ -260,6 +260,16 @@ def profile_code_style(project_path, zero_shot_cot=False):
 
 
 
+def download_file(file_id, download_path):
+    '''
+    파일 id를 입력받아, 다운로드 경로에 파일을 다운로드한다.
+    '''
+    with open(download_path, "wb") as f:
+        content = client.files.content(file_id).read()
+        print(content)
+        f.write(content)
+    return download_path
+
 
 
 '''
@@ -317,13 +327,13 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
             print(file.read())
    
 
-
+    code_patch_result = dict()
+    code_patch_result['patched_files'] = dict()
     '''
     파일별로 message를 생성하고 thread를 생성하여 취약점을 패치한다.
     패치된 파일을 다운로드하고, 특정 경로에 patched_원본파일이름 으로 저장한다.
-    [(원본파일경로, 패치된파일경로), ...] 반환
+    code_patch_result {'patched_files':{원본경로:패치된파일경로, ...}, 'vulnerabilities_by_file':vulnerabilities_dict_by_file} 반환
     '''
-    
     for code_path, vulnerabilities in vulnerabilities_dict_by_file.items():
         patch_thread = client.beta.threads.create()
 
@@ -360,6 +370,8 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
             thread_id=patch_thread.id
         )
 
+
+
         for message in messages:
             print(message.content[0].text.value)
             print('*'*50)
@@ -368,6 +380,7 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
 
         for message in messages:
             print(message)
+            print(message.attachments)
             print('*'*50)
         print('-'*50)
 
@@ -375,6 +388,8 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
         llm_patch_result = messages.data[0].content[0].text.value
         print(llm_patch_result)
         print('-'*50)
+
+
 
 
         # https://platform.openai.com/docs/api-reference/files/retrieve-contents
@@ -394,11 +409,30 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
 
         확인 결과, 앞쪽 인덱스가 최신 결과이다. 
         따라서 가장 앞에 있는 첨부파일을 찾아내서 이를 다운로드 받아야 한다.
-        
+
+        messages 구조가 어떻게 생겼는지 확인하기
+
+
         '''
+        # Find the message with the smallest index that has non-empty attachments
+        filtered_messages = [message for message in messages if len(message.attachments) > 0]
+        patched_code_attachment = filtered_messages[0].attachments[0]
+        patched_code_file_id = patched_code_attachment.file_id
+        print(f"patched_code_file_id: {patched_code_file_id}")
 
+        
+        patched_project_save_path = get_patched_code_save_directory(project_path)
+        patched_code_save_path = os.path.join(patched_project_save_path, get_relative_path(project_path, code_path))
 
-    return llm_patch_result
+        download_file(patched_code_file_id, patched_code_save_path)
+
+        # code_patch_result {'patched_files':{원본경로:패치된파일경로, ...}, 'vulnerabilities_by_file':vulnerabilities_dict_by_file} 반환
+        
+        code_patch_result['patched_files'][code_path] = patched_code_save_path
+
+    code_patch_result['vulnerabilities_by_file'] = vulnerabilities_dict_by_file
+
+    return code_patch_result
 
 
 
@@ -446,6 +480,4 @@ def explain_patch(vulnerable_code_path, patched_code_path, zero_shot_cot=False):
     print(llm_explain_result)
     print('-'*50)
 
-
-
-
+    
