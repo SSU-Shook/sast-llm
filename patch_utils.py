@@ -4,6 +4,9 @@
 '''
 
 
+from helper_utils import *
+
+
 def forge_vulnerability_comment(vulnerability):
     '''
     취약점 정보를 입력받아 취약점에 대한 주석을 생성한다.
