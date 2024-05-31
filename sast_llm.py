@@ -33,21 +33,6 @@ Todo
 
 
 
-'''
-A typical integration of the Assistants API has the following flow:
-
-1. Create an Assistant by defining its custom instructions and picking a model. 
-If helpful, add files and enable tools like Code Interpreter, File Search, and Function calling.
-
-2. Create a Thread when a user starts a conversation.
-
-3. Add Messages to the Thread as the user asks questions.
-
-4. Run the Assistant on the Thread to generate a response by calling the model and the tools.
-'''
-
-
-
 # 스크립트 파일의 절대 경로를 가져옵니다.
 script_directory = os.path.abspath(os.path.dirname(__file__))
 
@@ -401,7 +386,7 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
         그리고 다음과 같이 반환하자
         {
             'patched_file_path': [
-                (원본파일경로, 패치된파일경로),
+                {원본파일경로: 패치된파일경로},
                 ...
             ],
             'vulnerabilities_by_file': vulnerabilities_dict_by_file_name
@@ -423,6 +408,7 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
         
         patched_project_save_path = get_patched_code_save_directory(project_path)
         patched_code_save_path = os.path.join(patched_project_save_path, get_relative_path(project_path, code_path))
+        patched_code_save_path = os.path.abspath(patched_code_save_path)
 
         download_file(patched_code_file_id, patched_code_save_path)
 
