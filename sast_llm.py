@@ -78,6 +78,9 @@ def check_status(run_id,thread_id):
         thread_id=thread_id,
         run_id=run_id,
     )
+    if run.status == 'failed':
+        print(f"Failed: {run.last_error.code} {run.last_error.message}")
+        raise Exception("Failed")
     return run.status
 
 

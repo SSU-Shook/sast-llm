@@ -6,6 +6,6 @@ LLM_API_KEY = {
 
 ASSISTANT_ID = {
     'profile_assistant': 'asst_8J4MBHnqnjzhzAcdED7p1Wxa',
-    'patch_assistant': 'asst_bthE7iezz83nn3mHBHMT8QTc',
-    'explain_assistant': 'asst_RlGLAMRRiFK5gKmsuB8RpPRI'
+    'patch_assistant': 'asst_DCU9yoVZnnd3UiGmWEyRnbZU',
+    'explain_assistant': 'asst_v9hhDr5WMkbWP2kOCFt9ACIM'
 }
