@@ -7,17 +7,34 @@ import 하여 사용합니다.
 ## instructions.py
 LLM 입력 프롬프트를 포함하는 파일입니다.
 
-## code_style_profile_test.py
-코드 스타일 프로파일링을 테스트하는 스크립트입니다.
+## patch_utils.py
+코드 패치와 관련이 높은 함수들의 모음
 
-## explain_patch_test.py
-취약점과 패치 내용에 대한 설명 생성을 테스트하는 스크립트입니다.
+## helper_utils.py
+SAST와 직접적인 관련이 없는, 간단한 유틸리티 함수들
 
 ## vulnerability_patch_test.py
-취약점 패치를 테스트 하는 스크립트입니다.
+취약점 패치를 테스트 하는 스크립트입니다.  
+(patch_vulnerabilities 함수 테스트)  
+
+## code_style_profile_test.py
+코드 스타일 프로파일링을 테스트 하는 스크립트입니다.  
+(profile_code_style 함수 테스트)  
+
+## explain_patch_test.py
+취약점과 패치 내용에 대한 설명을 테스트합니다.  
+(explain_patch 함수 테스트)
 
 ## code_style_profile_rules.md
-GPT 어시스턴트에 업로드되는 코드 스타일 프로파일 포멧에 대한 설명 파일입니다.
+GPT 어시스턴트에 업로드되는 코드 스타일 프로파일 포멧에 대한 설명 파일입니다.  
+(profile_code_style 함수 테스트)
+
+## comment_added_codes
+LLM으로 취약점 패치 전에 취약점 정보를 주석에 추가한 코드가 저장되는 디렉터리입니다.
+
+## patched_codes
+LLM으로 취약점이 패치된 코드가 저장됩니다.
+
 
 
 # sast_llm.py의 주요 함수
