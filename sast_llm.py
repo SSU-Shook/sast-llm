@@ -143,6 +143,16 @@ def upload_files(file_list):
 
 
 
+def download_file(file_id, download_path):
+    '''
+    파일 id를 입력받아, 다운로드 경로에 파일을 다운로드한다.
+    '''
+    with open(download_path, "wb") as f:
+        content = client.files.content(file_id).read()
+        print(content)
+        f.write(content)
+    return download_path
+
 
 
 
@@ -259,16 +269,6 @@ def profile_code_style(project_path, zero_shot_cot=False):
     return extracted_json_codes_from_llm_profile_result[-1] # json 문자열 형식으로 반환
 
 
-
-def download_file(file_id, download_path):
-    '''
-    파일 id를 입력받아, 다운로드 경로에 파일을 다운로드한다.
-    '''
-    with open(download_path, "wb") as f:
-        content = client.files.content(file_id).read()
-        print(content)
-        f.write(content)
-    return download_path
 
 
 
