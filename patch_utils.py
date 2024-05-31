@@ -1,3 +1,9 @@
+'''
+취약점 패치와 상대적으로 관련이 높은
+유틸리티 함수 모음
+'''
+
+
 def forge_vulnerability_comment(vulnerability):
     '''
     취약점 정보를 입력받아 취약점에 대한 주석을 생성한다.
