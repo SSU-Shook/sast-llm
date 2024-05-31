@@ -59,6 +59,15 @@ except:
 
 
 
+def create_attachments_list(file_id_list):
+    '''
+    파일 id 리스트를 입력받아 attachments 리스트를 생성한다.
+    '''
+    attachments_list = []
+    for file in file_id_list:
+        attachments_list.append({"file_id": file, "tools": [{"type": "file_search"}]}) #code_interpreter로 수정 고려
+    return attachments_list    
+
 
 
 def check_status(run_id,thread_id):

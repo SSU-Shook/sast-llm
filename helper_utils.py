@@ -78,15 +78,6 @@ def get_full_path(base_path, file_path):
 
 
 
-def create_attachments_list(file_id_list):
-    '''
-    파일 id 리스트를 입력받아 attachments 리스트를 생성한다.
-    '''
-    attachments_list = []
-    for file in file_id_list:
-        attachments_list.append({"file_id": file, "tools": [{"type": "file_search"}]}) 
-    return attachments_list    
-
 
 def extract_directory_name(directory_path):
     '''
