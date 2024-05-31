@@ -320,7 +320,8 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
 
     '''
 
-    original_path_copied_path_dict = copy_source_code_files(project_path, vulnerabilities_dict_by_file)
+    project_uuid = generate_directory_name()
+    original_path_copied_path_dict = copy_source_code_files(project_path, project_uuid, vulnerabilities_dict_by_file)
     print(original_path_copied_path_dict)
 
     for code_path, vulnerabilities in vulnerabilities_dict_by_file.items():
@@ -336,7 +337,7 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
     패치된 파일을 다운로드하고, 특정 경로에 patched_원본파일이름 으로 저장한다.
     code_patch_result {'patched_files':{원본경로:패치된파일경로, ...}, 'vulnerabilities_by_file':vulnerabilities_dict_by_file} 반환
     '''
-    patched_project_save_path = get_patched_code_save_directory(project_path)
+    patched_project_save_path = get_patched_code_save_directory(project_path, project_uuid)
     for code_path, vulnerabilities in vulnerabilities_dict_by_file.items():
         patch_thread = client.beta.threads.create()
 

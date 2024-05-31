@@ -97,7 +97,7 @@ copy_source_code_files 함수
 전체 폴더에서 취약점이 존재하는 파일과 상위 폴더만 복사하는 함수 
 이 함수는 원본 코드의 경로와, 이에 대응하는 복사본 코드의 경로를 반환한다.
 '''
-def copy_source_code_files(project_path, vulnerabilities_dict_by_file):
+def copy_source_code_files(project_path, project_uuid, vulnerabilities_dict_by_file):
     '''
     취약점이 존재하는 파일과 상위 폴더만 복사한다.
     '''
@@ -119,7 +119,7 @@ def copy_source_code_files(project_path, vulnerabilities_dict_by_file):
     original_path_copied_path_dict = dict()
 
     original_directory_name = extract_directory_name(project_path)
-    copied_directory_name = generate_directory_name()
+    copied_directory_name = project_uuid
 
     copied_directory_path = os.path.join("comment_added_codes", copied_directory_name)
     copied_directory_path = os.path.join(copied_directory_path, original_directory_name)
@@ -140,13 +140,13 @@ def copy_source_code_files(project_path, vulnerabilities_dict_by_file):
 
 
 
-def get_patched_code_save_directory(project_path):
+def get_patched_code_save_directory(project_path, directory_name=generate_directory_name()):
     '''
     패치된 코드를 저장할 디렉터리를 생성하고 반환한다.
     '''
     
     base_directory_name = os.path.basename(project_path)
-    patched_code_save_directory = os.path.join("patched_codes", generate_directory_name())
+    patched_code_save_directory = os.path.join("patched_codes", directory_name)
     patched_code_save_directory = os.path.join(patched_code_save_directory, base_directory_name)
     os.makedirs(patched_code_save_directory)
     return patched_code_save_directory
