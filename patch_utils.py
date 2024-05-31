@@ -71,13 +71,13 @@ def preprocess_code(file_path):
         lines = file.readlines()
     
     if lines and lines[0].startswith('#!'):
-        lines = lines[1:]
+        lines[0] = '\n'
 
-    temp_dir = tempfile.gettempdir()
+    temp_dir = tempfile.mkdtemp()
     filename = get_file_name_from_path(file_path)
     temp_file_path = os.path.join(temp_dir, filename)
 
-    with open(file_path, 'w', encoding='UTF8') as file:
+    with open(temp_file_path, 'w', encoding='UTF8') as file:
         file.writelines(lines)
     
     return temp_file_path

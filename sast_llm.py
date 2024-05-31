@@ -391,6 +391,10 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
             ],
             'vulnerabilities_by_file': vulnerabilities_dict_by_file_name
         }
+
+        확인 결과, 앞쪽 인덱스가 최신 결과이다. 
+        따라서 가장 앞에 있는 첨부파일을 찾아내서 이를 다운로드 받아야 한다.
+        
         '''
 
 
