@@ -65,7 +65,7 @@ def create_attachments_list(file_id_list):
     '''
     attachments_list = []
     for file in file_id_list:
-        attachments_list.append({"file_id": file, "tools": [{"type": "code_interpreter"}]}) #code_interpreter로 수정 고려
+        attachments_list.append({"file_id": file, "tools": [{"type": "code_interpreter"}]}) #code_interpreter, file_browser   둘 다 패치 코드 특수문자 깨짐 증상
     return attachments_list    
 
 

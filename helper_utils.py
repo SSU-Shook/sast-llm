@@ -17,6 +17,20 @@ import uuid
 import shutil
 
 
+
+def generate_diff(text1, text2):
+    lines1 = text1.splitlines()
+    lines2 = text2.splitlines()
+
+    diff = []
+    for line in difflib.unified_diff(lines1, lines2):
+        diff.append(line)
+
+    return '\n'.join(diff)
+
+
+
+
 def generate_directory_name():
     return str(uuid.uuid4())
 
