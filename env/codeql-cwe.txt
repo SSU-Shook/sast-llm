@@ -1,0 +1,822 @@
+CWE-20	JavaScript/TypeScript	js/count-untrusted-data-external-api	Frequency counts for external APIs that are used with untrusted data
+CWE-20	JavaScript/TypeScript	js/incomplete-hostname-regexp	Incomplete regular expression for hostnames
+CWE-20	JavaScript/TypeScript	js/incomplete-url-scheme-check	Incomplete URL scheme check
+CWE-20	JavaScript/TypeScript	js/incomplete-url-substring-sanitization	Incomplete URL substring sanitization
+CWE-20	JavaScript/TypeScript	js/incorrect-suffix-check	Incorrect suffix check
+CWE-20	JavaScript/TypeScript	js/missing-origin-check	Missing origin verification in postMessage handler
+CWE-20	JavaScript/TypeScript	js/regex/missing-regexp-anchor	Missing regular expression anchor
+CWE-20	JavaScript/TypeScript	js/overly-large-range	Overly permissive regular expression range
+CWE-20	JavaScript/TypeScript	js/untrusted-data-to-external-api	Untrusted data passed to external API
+CWE-20	JavaScript/TypeScript	js/useless-regexp-character-escape	Useless regular-expression character escape
+CWE-20	JavaScript/TypeScript	js/bad-tag-filter	Bad HTML filtering regexp
+CWE-20	JavaScript/TypeScript	js/double-escaping	Double escaping or unescaping
+CWE-20	JavaScript/TypeScript	js/incomplete-html-attribute-sanitization	Incomplete HTML attribute sanitization
+CWE-20	JavaScript/TypeScript	js/incomplete-multi-character-sanitization	Incomplete multi-character sanitization
+CWE-20	JavaScript/TypeScript	js/incomplete-sanitization	Incomplete string escaping or encoding
+CWE-20	JavaScript/TypeScript	js/untrusted-data-to-external-api-more-sources	Untrusted data passed to external API with additional heuristic sources
+CWE-22	JavaScript/TypeScript	js/path-injection	Uncontrolled data used in path expression
+CWE-22	JavaScript/TypeScript	js/zipslip	Arbitrary file access during archive extraction ("Zip Slip")
+CWE-23	JavaScript/TypeScript	js/path-injection	Uncontrolled data used in path expression
+CWE-36	JavaScript/TypeScript	js/path-injection	Uncontrolled data used in path expression
+CWE-73	JavaScript/TypeScript	js/path-injection	Uncontrolled data used in path expression
+CWE-73	JavaScript/TypeScript	js/template-object-injection	Template Object Injection
+CWE-74	JavaScript/TypeScript	js/disabling-electron-websecurity	Disabling Electron webSecurity
+CWE-74	JavaScript/TypeScript	js/enabling-electron-renderer-node-integration	Enabling Node.js integration for Electron web content renderers
+CWE-74	JavaScript/TypeScript	js/path-injection	Uncontrolled data used in path expression
+CWE-74	JavaScript/TypeScript	js/template-object-injection	Template Object Injection
+CWE-74	JavaScript/TypeScript	js/command-line-injection	Uncontrolled command line
+CWE-74	JavaScript/TypeScript	js/indirect-command-line-injection	Indirect uncontrolled command line
+CWE-74	JavaScript/TypeScript	js/second-order-command-line-injection	Second order command injection
+CWE-74	JavaScript/TypeScript	js/shell-command-injection-from-environment	Shell command built from environment values
+CWE-74	JavaScript/TypeScript	js/shell-command-constructed-from-input	Unsafe shell command constructed from library input
+CWE-74	JavaScript/TypeScript	js/unnecessary-use-of-cat	Unnecessary use of cat process
+CWE-74	JavaScript/TypeScript	js/xss-through-exception	Exception text reinterpreted as HTML
+CWE-74	JavaScript/TypeScript	js/reflected-xss	Reflected cross-site scripting
+CWE-74	JavaScript/TypeScript	js/stored-xss	Stored cross-site scripting
+CWE-74	JavaScript/TypeScript	js/html-constructed-from-input	Unsafe HTML constructed from library input
+CWE-74	JavaScript/TypeScript	js/unsafe-jquery-plugin	Unsafe jQuery plugin
+CWE-74	JavaScript/TypeScript	js/xss	Client-side cross-site scripting
+CWE-74	JavaScript/TypeScript	js/xss-through-dom	DOM text reinterpreted as HTML
+CWE-74	JavaScript/TypeScript	js/sql-injection	Database query built from user-controlled sources
+CWE-74	JavaScript/TypeScript	js/code-injection	Code injection
+CWE-74	JavaScript/TypeScript	js/actions/command-injection	Expression injection in Actions
+CWE-74	JavaScript/TypeScript	js/bad-code-sanitization	Improper code sanitization
+CWE-74	JavaScript/TypeScript	js/unsafe-code-construction	Unsafe code constructed from library input
+CWE-74	JavaScript/TypeScript	js/unsafe-dynamic-method-access	Unsafe dynamic method access
+CWE-74	JavaScript/TypeScript	js/bad-tag-filter	Bad HTML filtering regexp
+CWE-74	JavaScript/TypeScript	js/incomplete-html-attribute-sanitization	Incomplete HTML attribute sanitization
+CWE-74	JavaScript/TypeScript	js/incomplete-multi-character-sanitization	Incomplete multi-character sanitization
+CWE-74	JavaScript/TypeScript	js/incomplete-sanitization	Incomplete string escaping or encoding
+CWE-74	JavaScript/TypeScript	js/unsafe-html-expansion	Unsafe expansion of self-closing HTML tag
+CWE-74	JavaScript/TypeScript	js/tainted-format-string	Use of externally-controlled format string
+CWE-74	JavaScript/TypeScript	js/client-side-unvalidated-url-redirection	Client-side URL redirect
+CWE-74	JavaScript/TypeScript	js/xpath-injection	XPath injection
+CWE-74	JavaScript/TypeScript	js/prototype-polluting-assignment	Prototype-polluting assignment
+CWE-74	JavaScript/TypeScript	js/prototype-pollution-utility	Prototype-polluting function
+CWE-74	JavaScript/TypeScript	js/prototype-pollution	Prototype-polluting merge call
+CWE-74	JavaScript/TypeScript	js/actions/pull-request-target	Checkout of untrusted code in trusted context
+CWE-74	JavaScript/TypeScript	js/command-line-injection-more-sources	Uncontrolled command line with additional heuristic sources
+CWE-74	JavaScript/TypeScript	js/xss-more-sources	Client-side cross-site scripting with additional heuristic sources
+CWE-74	JavaScript/TypeScript	js/sql-injection-more-sources	Database query built from user-controlled sources with additional heuristic sources
+CWE-74	JavaScript/TypeScript	js/code-injection-more-sources	Code injection with additional heuristic sources
+CWE-74	JavaScript/TypeScript	js/tainted-format-string-more-sources	Use of externally-controlled format string with additional heuristic sources
+CWE-74	JavaScript/TypeScript	js/xpath-injection-more-sources	XPath injection with additional heuristic sources
+CWE-74	JavaScript/TypeScript	js/prototype-polluting-assignment-more-sources	Prototype-polluting assignment with additional heuristic sources
+CWE-77	JavaScript/TypeScript	js/command-line-injection	Uncontrolled command line
+CWE-77	JavaScript/TypeScript	js/indirect-command-line-injection	Indirect uncontrolled command line
+CWE-77	JavaScript/TypeScript	js/second-order-command-line-injection	Second order command injection
+CWE-77	JavaScript/TypeScript	js/shell-command-injection-from-environment	Shell command built from environment values
+CWE-77	JavaScript/TypeScript	js/shell-command-constructed-from-input	Unsafe shell command constructed from library input
+CWE-77	JavaScript/TypeScript	js/unnecessary-use-of-cat	Unnecessary use of cat process
+CWE-77	JavaScript/TypeScript	js/prototype-polluting-assignment	Prototype-polluting assignment
+CWE-77	JavaScript/TypeScript	js/prototype-pollution-utility	Prototype-polluting function
+CWE-77	JavaScript/TypeScript	js/prototype-pollution	Prototype-polluting merge call
+CWE-77	JavaScript/TypeScript	js/command-line-injection-more-sources	Uncontrolled command line with additional heuristic sources
+CWE-77	JavaScript/TypeScript	js/prototype-polluting-assignment-more-sources	Prototype-polluting assignment with additional heuristic sources
+CWE-78	JavaScript/TypeScript	js/command-line-injection	Uncontrolled command line
+CWE-78	JavaScript/TypeScript	js/indirect-command-line-injection	Indirect uncontrolled command line
+CWE-78	JavaScript/TypeScript	js/second-order-command-line-injection	Second order command injection
+CWE-78	JavaScript/TypeScript	js/shell-command-injection-from-environment	Shell command built from environment values
+CWE-78	JavaScript/TypeScript	js/shell-command-constructed-from-input	Unsafe shell command constructed from library input
+CWE-78	JavaScript/TypeScript	js/unnecessary-use-of-cat	Unnecessary use of cat process
+CWE-78	JavaScript/TypeScript	js/prototype-polluting-assignment	Prototype-polluting assignment
+CWE-78	JavaScript/TypeScript	js/prototype-pollution-utility	Prototype-polluting function
+CWE-78	JavaScript/TypeScript	js/prototype-pollution	Prototype-polluting merge call
+CWE-78	JavaScript/TypeScript	js/command-line-injection-more-sources	Uncontrolled command line with additional heuristic sources
+CWE-78	JavaScript/TypeScript	js/prototype-polluting-assignment-more-sources	Prototype-polluting assignment with additional heuristic sources
+CWE-79	JavaScript/TypeScript	js/disabling-electron-websecurity	Disabling Electron webSecurity
+CWE-79	JavaScript/TypeScript	js/xss-through-exception	Exception text reinterpreted as HTML
+CWE-79	JavaScript/TypeScript	js/reflected-xss	Reflected cross-site scripting
+CWE-79	JavaScript/TypeScript	js/stored-xss	Stored cross-site scripting
+CWE-79	JavaScript/TypeScript	js/html-constructed-from-input	Unsafe HTML constructed from library input
+CWE-79	JavaScript/TypeScript	js/unsafe-jquery-plugin	Unsafe jQuery plugin
+CWE-79	JavaScript/TypeScript	js/xss	Client-side cross-site scripting
+CWE-79	JavaScript/TypeScript	js/xss-through-dom	DOM text reinterpreted as HTML
+CWE-79	JavaScript/TypeScript	js/code-injection	Code injection
+CWE-79	JavaScript/TypeScript	js/bad-code-sanitization	Improper code sanitization
+CWE-79	JavaScript/TypeScript	js/unsafe-code-construction	Unsafe code constructed from library input
+CWE-79	JavaScript/TypeScript	js/bad-tag-filter	Bad HTML filtering regexp
+CWE-79	JavaScript/TypeScript	js/incomplete-html-attribute-sanitization	Incomplete HTML attribute sanitization
+CWE-79	JavaScript/TypeScript	js/incomplete-multi-character-sanitization	Incomplete multi-character sanitization
+CWE-79	JavaScript/TypeScript	js/incomplete-sanitization	Incomplete string escaping or encoding
+CWE-79	JavaScript/TypeScript	js/unsafe-html-expansion	Unsafe expansion of self-closing HTML tag
+CWE-79	JavaScript/TypeScript	js/client-side-unvalidated-url-redirection	Client-side URL redirect
+CWE-79	JavaScript/TypeScript	js/prototype-polluting-assignment	Prototype-polluting assignment
+CWE-79	JavaScript/TypeScript	js/prototype-pollution-utility	Prototype-polluting function
+CWE-79	JavaScript/TypeScript	js/prototype-pollution	Prototype-polluting merge call
+CWE-79	JavaScript/TypeScript	js/xss-more-sources	Client-side cross-site scripting with additional heuristic sources
+CWE-79	JavaScript/TypeScript	js/code-injection-more-sources	Code injection with additional heuristic sources
+CWE-79	JavaScript/TypeScript	js/prototype-polluting-assignment-more-sources	Prototype-polluting assignment with additional heuristic sources
+CWE-80	JavaScript/TypeScript	js/bad-tag-filter	Bad HTML filtering regexp
+CWE-80	JavaScript/TypeScript	js/incomplete-multi-character-sanitization	Incomplete multi-character sanitization
+CWE-80	JavaScript/TypeScript	js/incomplete-sanitization	Incomplete string escaping or encoding
+CWE-88	JavaScript/TypeScript	js/command-line-injection	Uncontrolled command line
+CWE-88	JavaScript/TypeScript	js/indirect-command-line-injection	Indirect uncontrolled command line
+CWE-88	JavaScript/TypeScript	js/second-order-command-line-injection	Second order command injection
+CWE-88	JavaScript/TypeScript	js/shell-command-injection-from-environment	Shell command built from environment values
+CWE-88	JavaScript/TypeScript	js/shell-command-constructed-from-input	Unsafe shell command constructed from library input
+CWE-88	JavaScript/TypeScript	js/command-line-injection-more-sources	Uncontrolled command line with additional heuristic sources
+CWE-89	JavaScript/TypeScript	js/sql-injection	Database query built from user-controlled sources
+CWE-89	JavaScript/TypeScript	js/sql-injection-more-sources	Database query built from user-controlled sources with additional heuristic sources
+CWE-90	JavaScript/TypeScript	js/sql-injection	Database query built from user-controlled sources
+CWE-90	JavaScript/TypeScript	js/sql-injection-more-sources	Database query built from user-controlled sources with additional heuristic sources
+CWE-91	JavaScript/TypeScript	js/xpath-injection	XPath injection
+CWE-91	JavaScript/TypeScript	js/xpath-injection-more-sources	XPath injection with additional heuristic sources
+CWE-94	JavaScript/TypeScript	js/enabling-electron-renderer-node-integration	Enabling Node.js integration for Electron web content renderers
+CWE-94	JavaScript/TypeScript	js/template-object-injection	Template Object Injection
+CWE-94	JavaScript/TypeScript	js/code-injection	Code injection
+CWE-94	JavaScript/TypeScript	js/actions/command-injection	Expression injection in Actions
+CWE-94	JavaScript/TypeScript	js/bad-code-sanitization	Improper code sanitization
+CWE-94	JavaScript/TypeScript	js/unsafe-code-construction	Unsafe code constructed from library input
+CWE-94	JavaScript/TypeScript	js/unsafe-dynamic-method-access	Unsafe dynamic method access
+CWE-94	JavaScript/TypeScript	js/prototype-polluting-assignment	Prototype-polluting assignment
+CWE-94	JavaScript/TypeScript	js/prototype-pollution-utility	Prototype-polluting function
+CWE-94	JavaScript/TypeScript	js/prototype-pollution	Prototype-polluting merge call
+CWE-94	JavaScript/TypeScript	js/actions/pull-request-target	Checkout of untrusted code in trusted context
+CWE-94	JavaScript/TypeScript	js/code-injection-more-sources	Code injection with additional heuristic sources
+CWE-94	JavaScript/TypeScript	js/prototype-polluting-assignment-more-sources	Prototype-polluting assignment with additional heuristic sources
+CWE-95	JavaScript/TypeScript	js/code-injection	Code injection
+CWE-95	JavaScript/TypeScript	js/code-injection-more-sources	Code injection with additional heuristic sources
+CWE-99	JavaScript/TypeScript	js/path-injection	Uncontrolled data used in path expression
+CWE-116	JavaScript/TypeScript	js/angular/disabling-sce	Disabling SCE
+CWE-116	JavaScript/TypeScript	js/identity-replacement	Replacement of a substring with itself
+CWE-116	JavaScript/TypeScript	js/xss-through-exception	Exception text reinterpreted as HTML
+CWE-116	JavaScript/TypeScript	js/reflected-xss	Reflected cross-site scripting
+CWE-116	JavaScript/TypeScript	js/stored-xss	Stored cross-site scripting
+CWE-116	JavaScript/TypeScript	js/html-constructed-from-input	Unsafe HTML constructed from library input
+CWE-116	JavaScript/TypeScript	js/unsafe-jquery-plugin	Unsafe jQuery plugin
+CWE-116	JavaScript/TypeScript	js/xss	Client-side cross-site scripting
+CWE-116	JavaScript/TypeScript	js/xss-through-dom	DOM text reinterpreted as HTML
+CWE-116	JavaScript/TypeScript	js/code-injection	Code injection
+CWE-116	JavaScript/TypeScript	js/bad-code-sanitization	Improper code sanitization
+CWE-116	JavaScript/TypeScript	js/unsafe-code-construction	Unsafe code constructed from library input
+CWE-116	JavaScript/TypeScript	js/bad-tag-filter	Bad HTML filtering regexp
+CWE-116	JavaScript/TypeScript	js/double-escaping	Double escaping or unescaping
+CWE-116	JavaScript/TypeScript	js/incomplete-html-attribute-sanitization	Incomplete HTML attribute sanitization
+CWE-116	JavaScript/TypeScript	js/incomplete-multi-character-sanitization	Incomplete multi-character sanitization
+CWE-116	JavaScript/TypeScript	js/incomplete-sanitization	Incomplete string escaping or encoding
+CWE-116	JavaScript/TypeScript	js/unsafe-html-expansion	Unsafe expansion of self-closing HTML tag
+CWE-116	JavaScript/TypeScript	js/log-injection	Log injection
+CWE-116	JavaScript/TypeScript	js/client-side-unvalidated-url-redirection	Client-side URL redirect
+CWE-116	JavaScript/TypeScript	js/xss-more-sources	Client-side cross-site scripting with additional heuristic sources
+CWE-116	JavaScript/TypeScript	js/code-injection-more-sources	Code injection with additional heuristic sources
+CWE-116	JavaScript/TypeScript	js/log-injection-more-sources	Log injection with additional heuristic sources
+CWE-117	JavaScript/TypeScript	js/log-injection	Log injection
+CWE-117	JavaScript/TypeScript	js/log-injection-more-sources	Log injection with additional heuristic sources
+CWE-134	JavaScript/TypeScript	js/tainted-format-string	Use of externally-controlled format string
+CWE-134	JavaScript/TypeScript	js/tainted-format-string-more-sources	Use of externally-controlled format string with additional heuristic sources
+CWE-178	JavaScript/TypeScript	js/case-sensitive-middleware-path	Case-sensitive middleware path
+CWE-183	JavaScript/TypeScript	js/angular/insecure-url-whitelist	Insecure URL whitelist
+CWE-183	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials	CORS misconfiguration for credentials transfer
+CWE-183	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials-more-sources	CORS misconfiguration for credentials transfer with additional heuristic sources
+CWE-184	JavaScript/TypeScript	js/incomplete-url-scheme-check	Incomplete URL scheme check
+CWE-184	JavaScript/TypeScript	js/bad-tag-filter	Bad HTML filtering regexp
+CWE-185	JavaScript/TypeScript	js/angular/insecure-url-whitelist	Insecure URL whitelist
+CWE-185	JavaScript/TypeScript	js/bad-tag-filter	Bad HTML filtering regexp
+CWE-186	JavaScript/TypeScript	js/bad-tag-filter	Bad HTML filtering regexp
+CWE-193	JavaScript/TypeScript	js/index-out-of-bounds	Off-by-one comparison against length
+CWE-197	JavaScript/TypeScript	js/shift-out-of-range	Shift out of range
+CWE-200	JavaScript/TypeScript	js/unsafe-external-link	Potentially unsafe external link
+CWE-200	JavaScript/TypeScript	js/file-access-to-http	File data in outbound network request
+CWE-200	JavaScript/TypeScript	js/exposure-of-private-files	Exposure of private files
+CWE-200	JavaScript/TypeScript	js/cross-window-information-leak	Cross-window communication with unrestricted target origin
+CWE-200	JavaScript/TypeScript	js/stack-trace-exposure	Information exposure through a stack trace
+CWE-200	JavaScript/TypeScript	js/build-artifact-leak	Storage of sensitive information in build artifact
+CWE-200	JavaScript/TypeScript	js/clear-text-logging	Clear-text logging of sensitive information
+CWE-200	JavaScript/TypeScript	js/clear-text-storage-of-sensitive-data	Clear text storage of sensitive information
+CWE-200	JavaScript/TypeScript	js/sensitive-get-query	Sensitive data read from GET request
+CWE-201	JavaScript/TypeScript	js/cross-window-information-leak	Cross-window communication with unrestricted target origin
+CWE-209	JavaScript/TypeScript	js/stack-trace-exposure	Information exposure through a stack trace
+CWE-216	JavaScript/TypeScript	js/exposure-of-private-files	Exposure of private files
+CWE-219	JavaScript/TypeScript	js/exposure-of-private-files	Exposure of private files
+CWE-221	JavaScript/TypeScript	js/missing-x-frame-options	Missing X-Frame-Options HTTP header
+CWE-227	JavaScript/TypeScript	js/superfluous-trailing-arguments	Superfluous trailing arguments
+CWE-227	JavaScript/TypeScript	js/missing-x-frame-options	Missing X-Frame-Options HTTP header
+CWE-248	JavaScript/TypeScript	js/server-crash	Server crash
+CWE-250	JavaScript/TypeScript	js/remote-property-injection	Remote property injection
+CWE-250	JavaScript/TypeScript	js/remote-property-injection-more-sources	Remote property injection with additional heuristic sources
+CWE-256	JavaScript/TypeScript	js/password-in-configuration-file	Password in configuration file
+CWE-258	JavaScript/TypeScript	js/empty-password-in-configuration-file	Empty password in configuration file
+CWE-259	JavaScript/TypeScript	js/hardcoded-credentials	Hard-coded credentials
+CWE-260	JavaScript/TypeScript	js/password-in-configuration-file	Password in configuration file
+CWE-260	JavaScript/TypeScript	js/empty-password-in-configuration-file	Empty password in configuration file
+CWE-269	JavaScript/TypeScript	js/remote-property-injection	Remote property injection
+CWE-269	JavaScript/TypeScript	js/remote-property-injection-more-sources	Remote property injection with additional heuristic sources
+CWE-284	JavaScript/TypeScript	js/missing-origin-check	Missing origin verification in postMessage handler
+CWE-284	JavaScript/TypeScript	js/exposure-of-private-files	Exposure of private files
+CWE-284	JavaScript/TypeScript	js/disabling-certificate-validation	Disabling certificate validation
+CWE-284	JavaScript/TypeScript	js/insecure-dependency	Dependency download using unencrypted communication channel
+CWE-284	JavaScript/TypeScript	js/password-in-configuration-file	Password in configuration file
+CWE-284	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials	CORS misconfiguration for credentials transfer
+CWE-284	JavaScript/TypeScript	js/session-fixation	Failure to abandon session
+CWE-284	JavaScript/TypeScript	js/remote-property-injection	Remote property injection
+CWE-284	JavaScript/TypeScript	js/host-header-forgery-in-email-generation	Host header poisoning in email generation
+CWE-284	JavaScript/TypeScript	js/missing-rate-limiting	Missing rate limiting
+CWE-284	JavaScript/TypeScript	js/hardcoded-credentials	Hard-coded credentials
+CWE-284	JavaScript/TypeScript	js/user-controlled-bypass	User-controlled bypass of security check
+CWE-284	JavaScript/TypeScript	js/different-kinds-comparison-bypass	Comparison of user-controlled data of different kinds
+CWE-284	JavaScript/TypeScript	js/empty-password-in-configuration-file	Empty password in configuration file
+CWE-284	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials-more-sources	CORS misconfiguration for credentials transfer with additional heuristic sources
+CWE-284	JavaScript/TypeScript	js/remote-property-injection-more-sources	Remote property injection with additional heuristic sources
+CWE-284	JavaScript/TypeScript	js/user-controlled-bypass-more-sources	User-controlled bypass of security check with additional heuristic sources
+CWE-285	JavaScript/TypeScript	js/exposure-of-private-files	Exposure of private files
+CWE-285	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials	CORS misconfiguration for credentials transfer
+CWE-285	JavaScript/TypeScript	js/empty-password-in-configuration-file	Empty password in configuration file
+CWE-285	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials-more-sources	CORS misconfiguration for credentials transfer with additional heuristic sources
+CWE-287	JavaScript/TypeScript	js/password-in-configuration-file	Password in configuration file
+CWE-287	JavaScript/TypeScript	js/session-fixation	Failure to abandon session
+CWE-287	JavaScript/TypeScript	js/host-header-forgery-in-email-generation	Host header poisoning in email generation
+CWE-287	JavaScript/TypeScript	js/missing-rate-limiting	Missing rate limiting
+CWE-287	JavaScript/TypeScript	js/hardcoded-credentials	Hard-coded credentials
+CWE-287	JavaScript/TypeScript	js/user-controlled-bypass	User-controlled bypass of security check
+CWE-287	JavaScript/TypeScript	js/different-kinds-comparison-bypass	Comparison of user-controlled data of different kinds
+CWE-287	JavaScript/TypeScript	js/empty-password-in-configuration-file	Empty password in configuration file
+CWE-287	JavaScript/TypeScript	js/user-controlled-bypass-more-sources	User-controlled bypass of security check with additional heuristic sources
+CWE-290	JavaScript/TypeScript	js/user-controlled-bypass	User-controlled bypass of security check
+CWE-290	JavaScript/TypeScript	js/different-kinds-comparison-bypass	Comparison of user-controlled data of different kinds
+CWE-290	JavaScript/TypeScript	js/user-controlled-bypass-more-sources	User-controlled bypass of security check with additional heuristic sources
+CWE-295	JavaScript/TypeScript	js/disabling-certificate-validation	Disabling certificate validation
+CWE-297	JavaScript/TypeScript	js/disabling-certificate-validation	Disabling certificate validation
+CWE-300	JavaScript/TypeScript	js/insecure-dependency	Dependency download using unencrypted communication channel
+CWE-307	JavaScript/TypeScript	js/missing-rate-limiting	Missing rate limiting
+CWE-311	JavaScript/TypeScript	js/insecure-dependency	Dependency download using unencrypted communication channel
+CWE-311	JavaScript/TypeScript	js/build-artifact-leak	Storage of sensitive information in build artifact
+CWE-311	JavaScript/TypeScript	js/clear-text-logging	Clear-text logging of sensitive information
+CWE-311	JavaScript/TypeScript	js/clear-text-storage-of-sensitive-data	Clear text storage of sensitive information
+CWE-311	JavaScript/TypeScript	js/password-in-configuration-file	Password in configuration file
+CWE-311	JavaScript/TypeScript	js/clear-text-cookie	Clear text transmission of sensitive cookie
+CWE-312	JavaScript/TypeScript	js/build-artifact-leak	Storage of sensitive information in build artifact
+CWE-312	JavaScript/TypeScript	js/clear-text-logging	Clear-text logging of sensitive information
+CWE-312	JavaScript/TypeScript	js/clear-text-storage-of-sensitive-data	Clear text storage of sensitive information
+CWE-312	JavaScript/TypeScript	js/password-in-configuration-file	Password in configuration file
+CWE-312	JavaScript/TypeScript	js/clear-text-cookie	Clear text transmission of sensitive cookie
+CWE-313	JavaScript/TypeScript	js/password-in-configuration-file	Password in configuration file
+CWE-315	JavaScript/TypeScript	js/build-artifact-leak	Storage of sensitive information in build artifact
+CWE-315	JavaScript/TypeScript	js/clear-text-storage-of-sensitive-data	Clear text storage of sensitive information
+CWE-319	JavaScript/TypeScript	js/insecure-dependency	Dependency download using unencrypted communication channel
+CWE-319	JavaScript/TypeScript	js/clear-text-cookie	Clear text transmission of sensitive cookie
+CWE-321	JavaScript/TypeScript	js/hardcoded-credentials	Hard-coded credentials
+CWE-326	JavaScript/TypeScript	js/insufficient-key-size	Use of a weak cryptographic key
+CWE-326	JavaScript/TypeScript	js/weak-cryptographic-algorithm	Use of a broken or weak cryptographic algorithm
+CWE-327	JavaScript/TypeScript	js/biased-cryptographic-random	Creating biased random numbers from a cryptographically secure source
+CWE-327	JavaScript/TypeScript	js/weak-cryptographic-algorithm	Use of a broken or weak cryptographic algorithm
+CWE-327	JavaScript/TypeScript	js/insufficient-password-hash	Use of password hash with insufficient computational effort
+CWE-328	JavaScript/TypeScript	js/weak-cryptographic-algorithm	Use of a broken or weak cryptographic algorithm
+CWE-330	JavaScript/TypeScript	js/insecure-randomness	Insecure randomness
+CWE-330	JavaScript/TypeScript	js/hardcoded-credentials	Hard-coded credentials
+CWE-330	JavaScript/TypeScript	js/predictable-token	Predictable token
+CWE-338	JavaScript/TypeScript	js/insecure-randomness	Insecure randomness
+CWE-340	JavaScript/TypeScript	js/predictable-token	Predictable token
+CWE-344	JavaScript/TypeScript	js/hardcoded-credentials	Hard-coded credentials
+CWE-345	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials	CORS misconfiguration for credentials transfer
+CWE-345	JavaScript/TypeScript	js/jwt-missing-verification	JWT missing secret or public key verification
+CWE-345	JavaScript/TypeScript	js/missing-token-validation	Missing CSRF middleware
+CWE-345	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials-more-sources	CORS misconfiguration for credentials transfer with additional heuristic sources
+CWE-346	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials	CORS misconfiguration for credentials transfer
+CWE-346	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials-more-sources	CORS misconfiguration for credentials transfer with additional heuristic sources
+CWE-347	JavaScript/TypeScript	js/jwt-missing-verification	JWT missing secret or public key verification
+CWE-352	JavaScript/TypeScript	js/missing-token-validation	Missing CSRF middleware
+CWE-359	JavaScript/TypeScript	js/cross-window-information-leak	Cross-window communication with unrestricted target origin
+CWE-359	JavaScript/TypeScript	js/build-artifact-leak	Storage of sensitive information in build artifact
+CWE-359	JavaScript/TypeScript	js/clear-text-logging	Clear-text logging of sensitive information
+CWE-359	JavaScript/TypeScript	js/clear-text-storage-of-sensitive-data	Clear text storage of sensitive information
+CWE-362	JavaScript/TypeScript	js/file-system-race	Potential file system race condition
+CWE-367	JavaScript/TypeScript	js/file-system-race	Potential file system race condition
+CWE-377	JavaScript/TypeScript	js/insecure-temporary-file	Insecure temporary file
+CWE-378	JavaScript/TypeScript	js/insecure-temporary-file	Insecure temporary file
+CWE-384	JavaScript/TypeScript	js/session-fixation	Failure to abandon session
+CWE-398	JavaScript/TypeScript	js/todo-comment	TODO comment
+CWE-398	JavaScript/TypeScript	js/eval-like-call	Call to eval-like DOM function
+CWE-398	JavaScript/TypeScript	js/variable-initialization-conflict	Conflicting variable initialization
+CWE-398	JavaScript/TypeScript	js/function-declaration-conflict	Conflicting function declarations
+CWE-398	JavaScript/TypeScript	js/useless-assignment-to-global	Useless assignment to global variable
+CWE-398	JavaScript/TypeScript	js/useless-assignment-to-local	Useless assignment to local variable
+CWE-398	JavaScript/TypeScript	js/overwritten-property	Overwritten property
+CWE-398	JavaScript/TypeScript	js/comparison-of-identical-expressions	Comparison of identical values
+CWE-398	JavaScript/TypeScript	js/comparison-with-nan	Comparison with NaN
+CWE-398	JavaScript/TypeScript	js/duplicate-condition	Duplicate 'if' condition
+CWE-398	JavaScript/TypeScript	js/duplicate-property	Duplicate property
+CWE-398	JavaScript/TypeScript	js/duplicate-switch-case	Duplicate switch case
+CWE-398	JavaScript/TypeScript	js/useless-expression	Expression has no effect
+CWE-398	JavaScript/TypeScript	js/comparison-between-incompatible-types	Comparison between inconvertible types
+CWE-398	JavaScript/TypeScript	js/redundant-operation	Identical operands
+CWE-398	JavaScript/TypeScript	js/redundant-assignment	Self assignment
+CWE-398	JavaScript/TypeScript	js/call-to-non-callable	Invocation of non-function
+CWE-398	JavaScript/TypeScript	js/property-access-on-non-object	Property access on null or undefined
+CWE-398	JavaScript/TypeScript	js/unneeded-defensive-code	Unneeded defensive code
+CWE-398	JavaScript/TypeScript	js/useless-type-test	Useless type test
+CWE-398	JavaScript/TypeScript	js/eval-call	Use of eval
+CWE-398	JavaScript/TypeScript	js/node/assignment-to-exports-variable	Assignment to exports variable
+CWE-398	JavaScript/TypeScript	js/regex/unmatchable-caret	Unmatchable caret in regular expression
+CWE-398	JavaScript/TypeScript	js/regex/unmatchable-dollar	Unmatchable dollar in regular expression
+CWE-398	JavaScript/TypeScript	js/useless-assignment-in-return	Return statement assigns local variable
+CWE-398	JavaScript/TypeScript	js/unreachable-statement	Unreachable statement
+CWE-398	JavaScript/TypeScript	js/trivial-conditional	Useless conditional
+CWE-400	JavaScript/TypeScript	js/polynomial-redos	Polynomial regular expression used on uncontrolled data
+CWE-400	JavaScript/TypeScript	js/redos	Inefficient regular expression
+CWE-400	JavaScript/TypeScript	js/resource-exhaustion-from-deep-object-traversal	Resources exhaustion from deep object traversal
+CWE-400	JavaScript/TypeScript	js/remote-property-injection	Remote property injection
+CWE-400	JavaScript/TypeScript	js/regex-injection	Regular expression injection
+CWE-400	JavaScript/TypeScript	js/missing-rate-limiting	Missing rate limiting
+CWE-400	JavaScript/TypeScript	js/resource-exhaustion	Resource exhaustion
+CWE-400	JavaScript/TypeScript	js/xml-bomb	XML internal entity expansion
+CWE-400	JavaScript/TypeScript	js/prototype-polluting-assignment	Prototype-polluting assignment
+CWE-400	JavaScript/TypeScript	js/prototype-pollution-utility	Prototype-polluting function
+CWE-400	JavaScript/TypeScript	js/prototype-pollution	Prototype-polluting merge call
+CWE-400	JavaScript/TypeScript	js/remote-property-injection-more-sources	Remote property injection with additional heuristic sources
+CWE-400	JavaScript/TypeScript	js/regex-injection-more-sources	Regular expression injection with additional heuristic sources
+CWE-400	JavaScript/TypeScript	js/resource-exhaustion-more-sources	Resource exhaustion with additional heuristic sources
+CWE-400	JavaScript/TypeScript	js/xml-bomb-more-sources	XML internal entity expansion with additional heuristic sources
+CWE-400	JavaScript/TypeScript	js/prototype-polluting-assignment-more-sources	Prototype-polluting assignment with additional heuristic sources
+CWE-405	JavaScript/TypeScript	js/xml-bomb	XML internal entity expansion
+CWE-405	JavaScript/TypeScript	js/xml-bomb-more-sources	XML internal entity expansion with additional heuristic sources
+CWE-409	JavaScript/TypeScript	js/xml-bomb	XML internal entity expansion
+CWE-409	JavaScript/TypeScript	js/xml-bomb-more-sources	XML internal entity expansion with additional heuristic sources
+CWE-434	JavaScript/TypeScript	js/http-to-file-access	Network data written to file
+CWE-435	JavaScript/TypeScript	js/insecure-http-parser	Insecure http parser
+CWE-436	JavaScript/TypeScript	js/insecure-http-parser	Insecure http parser
+CWE-441	JavaScript/TypeScript	js/client-side-request-forgery	Client-side request forgery
+CWE-441	JavaScript/TypeScript	js/request-forgery	Server-side request forgery
+CWE-441	JavaScript/TypeScript	javascript/ssrf	Uncontrolled data used in network request
+CWE-444	JavaScript/TypeScript	js/insecure-http-parser	Insecure http parser
+CWE-451	JavaScript/TypeScript	js/missing-x-frame-options	Missing X-Frame-Options HTTP header
+CWE-471	JavaScript/TypeScript	js/prototype-polluting-assignment	Prototype-polluting assignment
+CWE-471	JavaScript/TypeScript	js/prototype-pollution-utility	Prototype-polluting function
+CWE-471	JavaScript/TypeScript	js/prototype-pollution	Prototype-polluting merge call
+CWE-471	JavaScript/TypeScript	js/prototype-polluting-assignment-more-sources	Prototype-polluting assignment with additional heuristic sources
+CWE-476	JavaScript/TypeScript	js/call-to-non-callable	Invocation of non-function
+CWE-476	JavaScript/TypeScript	js/property-access-on-non-object	Property access on null or undefined
+CWE-480	JavaScript/TypeScript	js/useless-expression	Expression has no effect
+CWE-480	JavaScript/TypeScript	js/redundant-operation	Identical operands
+CWE-480	JavaScript/TypeScript	js/redundant-assignment	Self assignment
+CWE-480	JavaScript/TypeScript	js/deletion-of-non-property	Deleting non-property
+CWE-483	JavaScript/TypeScript	js/misleading-indentation-of-dangling-else	Misleading indentation of dangling 'else'
+CWE-483	JavaScript/TypeScript	js/misleading-indentation-after-control-statement	Misleading indentation after control statement
+CWE-485	JavaScript/TypeScript	js/alert-call	Invocation of alert
+CWE-485	JavaScript/TypeScript	js/debugger-statement	Use of debugger statement
+CWE-485	JavaScript/TypeScript	js/exposure-of-private-files	Exposure of private files
+CWE-489	JavaScript/TypeScript	js/alert-call	Invocation of alert
+CWE-489	JavaScript/TypeScript	js/debugger-statement	Use of debugger statement
+CWE-494	JavaScript/TypeScript	js/enabling-electron-insecure-content	Enabling Electron allowRunningInsecureContent
+CWE-494	JavaScript/TypeScript	js/insecure-dependency	Dependency download using unencrypted communication channel
+CWE-497	JavaScript/TypeScript	js/stack-trace-exposure	Information exposure through a stack trace
+CWE-502	JavaScript/TypeScript	js/unsafe-deserialization	Deserialization of user-controlled data
+CWE-502	JavaScript/TypeScript	js/unsafe-deserialization-more-sources	Deserialization of user-controlled data with additional heuristic sources
+CWE-506	JavaScript/TypeScript	js/hardcoded-data-interpreted-as-code	Hard-coded data interpreted as code
+CWE-521	JavaScript/TypeScript	js/empty-password-in-configuration-file	Empty password in configuration file
+CWE-522	JavaScript/TypeScript	js/password-in-configuration-file	Password in configuration file
+CWE-522	JavaScript/TypeScript	js/empty-password-in-configuration-file	Empty password in configuration file
+CWE-532	JavaScript/TypeScript	js/clear-text-logging	Clear-text logging of sensitive information
+CWE-538	JavaScript/TypeScript	js/exposure-of-private-files	Exposure of private files
+CWE-538	JavaScript/TypeScript	js/clear-text-logging	Clear-text logging of sensitive information
+CWE-546	JavaScript/TypeScript	js/todo-comment	TODO comment
+CWE-548	JavaScript/TypeScript	js/exposure-of-private-files	Exposure of private files
+CWE-552	JavaScript/TypeScript	js/exposure-of-private-files	Exposure of private files
+CWE-552	JavaScript/TypeScript	js/clear-text-logging	Clear-text logging of sensitive information
+CWE-561	JavaScript/TypeScript	js/comparison-of-identical-expressions	Comparison of identical values
+CWE-561	JavaScript/TypeScript	js/comparison-with-nan	Comparison with NaN
+CWE-561	JavaScript/TypeScript	js/duplicate-condition	Duplicate 'if' condition
+CWE-561	JavaScript/TypeScript	js/duplicate-switch-case	Duplicate switch case
+CWE-561	JavaScript/TypeScript	js/useless-expression	Expression has no effect
+CWE-561	JavaScript/TypeScript	js/comparison-between-incompatible-types	Comparison between inconvertible types
+CWE-561	JavaScript/TypeScript	js/redundant-operation	Identical operands
+CWE-561	JavaScript/TypeScript	js/redundant-assignment	Self assignment
+CWE-561	JavaScript/TypeScript	js/unneeded-defensive-code	Unneeded defensive code
+CWE-561	JavaScript/TypeScript	js/useless-type-test	Useless type test
+CWE-561	JavaScript/TypeScript	js/regex/unmatchable-caret	Unmatchable caret in regular expression
+CWE-561	JavaScript/TypeScript	js/regex/unmatchable-dollar	Unmatchable dollar in regular expression
+CWE-561	JavaScript/TypeScript	js/unreachable-statement	Unreachable statement
+CWE-561	JavaScript/TypeScript	js/trivial-conditional	Useless conditional
+CWE-563	JavaScript/TypeScript	js/variable-initialization-conflict	Conflicting variable initialization
+CWE-563	JavaScript/TypeScript	js/function-declaration-conflict	Conflicting function declarations
+CWE-563	JavaScript/TypeScript	js/useless-assignment-to-global	Useless assignment to global variable
+CWE-563	JavaScript/TypeScript	js/useless-assignment-to-local	Useless assignment to local variable
+CWE-563	JavaScript/TypeScript	js/overwritten-property	Overwritten property
+CWE-563	JavaScript/TypeScript	js/duplicate-property	Duplicate property
+CWE-563	JavaScript/TypeScript	js/node/assignment-to-exports-variable	Assignment to exports variable
+CWE-563	JavaScript/TypeScript	js/useless-assignment-in-return	Return statement assigns local variable
+CWE-570	JavaScript/TypeScript	js/comparison-of-identical-expressions	Comparison of identical values
+CWE-570	JavaScript/TypeScript	js/comparison-with-nan	Comparison with NaN
+CWE-570	JavaScript/TypeScript	js/comparison-between-incompatible-types	Comparison between inconvertible types
+CWE-570	JavaScript/TypeScript	js/unneeded-defensive-code	Unneeded defensive code
+CWE-570	JavaScript/TypeScript	js/useless-type-test	Useless type test
+CWE-570	JavaScript/TypeScript	js/trivial-conditional	Useless conditional
+CWE-571	JavaScript/TypeScript	js/comparison-of-identical-expressions	Comparison of identical values
+CWE-571	JavaScript/TypeScript	js/comparison-with-nan	Comparison with NaN
+CWE-571	JavaScript/TypeScript	js/comparison-between-incompatible-types	Comparison between inconvertible types
+CWE-571	JavaScript/TypeScript	js/unneeded-defensive-code	Unneeded defensive code
+CWE-571	JavaScript/TypeScript	js/useless-type-test	Useless type test
+CWE-571	JavaScript/TypeScript	js/trivial-conditional	Useless conditional
+CWE-573	JavaScript/TypeScript	js/superfluous-trailing-arguments	Superfluous trailing arguments
+CWE-584	JavaScript/TypeScript	js/exit-from-finally	Jump from finally
+CWE-592	JavaScript/TypeScript	js/user-controlled-bypass	User-controlled bypass of security check
+CWE-592	JavaScript/TypeScript	js/different-kinds-comparison-bypass	Comparison of user-controlled data of different kinds
+CWE-592	JavaScript/TypeScript	js/user-controlled-bypass-more-sources	User-controlled bypass of security check with additional heuristic sources
+CWE-598	JavaScript/TypeScript	js/sensitive-get-query	Sensitive data read from GET request
+CWE-601	JavaScript/TypeScript	js/client-side-unvalidated-url-redirection	Client-side URL redirect
+CWE-601	JavaScript/TypeScript	js/server-side-unvalidated-url-redirection	Server-side URL redirect
+CWE-610	JavaScript/TypeScript	js/path-injection	Uncontrolled data used in path expression
+CWE-610	JavaScript/TypeScript	js/template-object-injection	Template Object Injection
+CWE-610	JavaScript/TypeScript	js/client-side-unvalidated-url-redirection	Client-side URL redirect
+CWE-610	JavaScript/TypeScript	js/server-side-unvalidated-url-redirection	Server-side URL redirect
+CWE-610	JavaScript/TypeScript	js/xxe	XML external entity expansion
+CWE-610	JavaScript/TypeScript	js/client-side-request-forgery	Client-side request forgery
+CWE-610	JavaScript/TypeScript	js/request-forgery	Server-side request forgery
+CWE-610	JavaScript/TypeScript	javascript/ssrf	Uncontrolled data used in network request
+CWE-610	JavaScript/TypeScript	js/xxe-more-sources	XML external entity expansion with additional heuristic sources
+CWE-611	JavaScript/TypeScript	js/xxe	XML external entity expansion
+CWE-611	JavaScript/TypeScript	js/xxe-more-sources	XML external entity expansion with additional heuristic sources
+CWE-614	JavaScript/TypeScript	js/clear-text-cookie	Clear text transmission of sensitive cookie
+CWE-625	JavaScript/TypeScript	js/angular/insecure-url-whitelist	Insecure URL whitelist
+CWE-628	JavaScript/TypeScript	js/superfluous-trailing-arguments	Superfluous trailing arguments
+CWE-639	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials	CORS misconfiguration for credentials transfer
+CWE-639	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials-more-sources	CORS misconfiguration for credentials transfer with additional heuristic sources
+CWE-640	JavaScript/TypeScript	js/host-header-forgery-in-email-generation	Host header poisoning in email generation
+CWE-642	JavaScript/TypeScript	js/path-injection	Uncontrolled data used in path expression
+CWE-642	JavaScript/TypeScript	js/template-object-injection	Template Object Injection
+CWE-643	JavaScript/TypeScript	js/xpath-injection	XPath injection
+CWE-643	JavaScript/TypeScript	js/xpath-injection-more-sources	XPath injection with additional heuristic sources
+CWE-657	JavaScript/TypeScript	js/remote-property-injection	Remote property injection
+CWE-657	JavaScript/TypeScript	js/hardcoded-credentials	Hard-coded credentials
+CWE-657	JavaScript/TypeScript	js/remote-property-injection-more-sources	Remote property injection with additional heuristic sources
+CWE-664	JavaScript/TypeScript	js/alert-call	Invocation of alert
+CWE-664	JavaScript/TypeScript	js/unsafe-external-link	Potentially unsafe external link
+CWE-664	JavaScript/TypeScript	js/enabling-electron-insecure-content	Enabling Electron allowRunningInsecureContent
+CWE-664	JavaScript/TypeScript	js/enabling-electron-renderer-node-integration	Enabling Node.js integration for Electron web content renderers
+CWE-664	JavaScript/TypeScript	js/implicit-operand-conversion	Implicit operand conversion
+CWE-664	JavaScript/TypeScript	js/shift-out-of-range	Shift out of range
+CWE-664	JavaScript/TypeScript	js/debugger-statement	Use of debugger statement
+CWE-664	JavaScript/TypeScript	js/invalid-prototype-value	Invalid prototype value
+CWE-664	JavaScript/TypeScript	js/property-assignment-on-primitive	Assignment to property of primitive value
+CWE-664	JavaScript/TypeScript	js/polynomial-redos	Polynomial regular expression used on uncontrolled data
+CWE-664	JavaScript/TypeScript	js/redos	Inefficient regular expression
+CWE-664	JavaScript/TypeScript	js/missing-origin-check	Missing origin verification in postMessage handler
+CWE-664	JavaScript/TypeScript	js/path-injection	Uncontrolled data used in path expression
+CWE-664	JavaScript/TypeScript	js/zipslip	Arbitrary file access during archive extraction ("Zip Slip")
+CWE-664	JavaScript/TypeScript	js/template-object-injection	Template Object Injection
+CWE-664	JavaScript/TypeScript	js/code-injection	Code injection
+CWE-664	JavaScript/TypeScript	js/actions/command-injection	Expression injection in Actions
+CWE-664	JavaScript/TypeScript	js/bad-code-sanitization	Improper code sanitization
+CWE-664	JavaScript/TypeScript	js/unsafe-code-construction	Unsafe code constructed from library input
+CWE-664	JavaScript/TypeScript	js/unsafe-dynamic-method-access	Unsafe dynamic method access
+CWE-664	JavaScript/TypeScript	js/case-sensitive-middleware-path	Case-sensitive middleware path
+CWE-664	JavaScript/TypeScript	js/file-access-to-http	File data in outbound network request
+CWE-664	JavaScript/TypeScript	js/exposure-of-private-files	Exposure of private files
+CWE-664	JavaScript/TypeScript	js/cross-window-information-leak	Cross-window communication with unrestricted target origin
+CWE-664	JavaScript/TypeScript	js/stack-trace-exposure	Information exposure through a stack trace
+CWE-664	JavaScript/TypeScript	js/disabling-certificate-validation	Disabling certificate validation
+CWE-664	JavaScript/TypeScript	js/insecure-dependency	Dependency download using unencrypted communication channel
+CWE-664	JavaScript/TypeScript	js/build-artifact-leak	Storage of sensitive information in build artifact
+CWE-664	JavaScript/TypeScript	js/clear-text-logging	Clear-text logging of sensitive information
+CWE-664	JavaScript/TypeScript	js/clear-text-storage-of-sensitive-data	Clear text storage of sensitive information
+CWE-664	JavaScript/TypeScript	js/password-in-configuration-file	Password in configuration file
+CWE-664	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials	CORS misconfiguration for credentials transfer
+CWE-664	JavaScript/TypeScript	js/insecure-temporary-file	Insecure temporary file
+CWE-664	JavaScript/TypeScript	js/session-fixation	Failure to abandon session
+CWE-664	JavaScript/TypeScript	js/resource-exhaustion-from-deep-object-traversal	Resources exhaustion from deep object traversal
+CWE-664	JavaScript/TypeScript	js/remote-property-injection	Remote property injection
+CWE-664	JavaScript/TypeScript	js/missing-x-frame-options	Missing X-Frame-Options HTTP header
+CWE-664	JavaScript/TypeScript	js/unsafe-deserialization	Deserialization of user-controlled data
+CWE-664	JavaScript/TypeScript	js/sensitive-get-query	Sensitive data read from GET request
+CWE-664	JavaScript/TypeScript	js/client-side-unvalidated-url-redirection	Client-side URL redirect
+CWE-664	JavaScript/TypeScript	js/server-side-unvalidated-url-redirection	Server-side URL redirect
+CWE-664	JavaScript/TypeScript	js/xxe	XML external entity expansion
+CWE-664	JavaScript/TypeScript	js/clear-text-cookie	Clear text transmission of sensitive cookie
+CWE-664	JavaScript/TypeScript	js/host-header-forgery-in-email-generation	Host header poisoning in email generation
+CWE-664	JavaScript/TypeScript	js/regex-injection	Regular expression injection
+CWE-664	JavaScript/TypeScript	js/missing-rate-limiting	Missing rate limiting
+CWE-664	JavaScript/TypeScript	js/resource-exhaustion	Resource exhaustion
+CWE-664	JavaScript/TypeScript	js/xml-bomb	XML internal entity expansion
+CWE-664	JavaScript/TypeScript	js/hardcoded-credentials	Hard-coded credentials
+CWE-664	JavaScript/TypeScript	js/user-controlled-bypass	User-controlled bypass of security check
+CWE-664	JavaScript/TypeScript	js/different-kinds-comparison-bypass	Comparison of user-controlled data of different kinds
+CWE-664	JavaScript/TypeScript	js/insecure-download	Download of sensitive file through insecure connection
+CWE-664	JavaScript/TypeScript	js/functionality-from-untrusted-source	Inclusion of functionality from an untrusted source
+CWE-664	JavaScript/TypeScript	js/type-confusion-through-parameter-tampering	Type confusion through parameter tampering
+CWE-664	JavaScript/TypeScript	js/empty-password-in-configuration-file	Empty password in configuration file
+CWE-664	JavaScript/TypeScript	js/http-to-file-access	Network data written to file
+CWE-664	JavaScript/TypeScript	js/prototype-polluting-assignment	Prototype-polluting assignment
+CWE-664	JavaScript/TypeScript	js/prototype-pollution-utility	Prototype-polluting function
+CWE-664	JavaScript/TypeScript	js/prototype-pollution	Prototype-polluting merge call
+CWE-664	JavaScript/TypeScript	js/client-side-request-forgery	Client-side request forgery
+CWE-664	JavaScript/TypeScript	js/request-forgery	Server-side request forgery
+CWE-664	JavaScript/TypeScript	js/actions/pull-request-target	Checkout of untrusted code in trusted context
+CWE-664	JavaScript/TypeScript	javascript/ssrf	Uncontrolled data used in network request
+CWE-664	JavaScript/TypeScript	js/code-injection-more-sources	Code injection with additional heuristic sources
+CWE-664	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials-more-sources	CORS misconfiguration for credentials transfer with additional heuristic sources
+CWE-664	JavaScript/TypeScript	js/remote-property-injection-more-sources	Remote property injection with additional heuristic sources
+CWE-664	JavaScript/TypeScript	js/unsafe-deserialization-more-sources	Deserialization of user-controlled data with additional heuristic sources
+CWE-664	JavaScript/TypeScript	js/xxe-more-sources	XML external entity expansion with additional heuristic sources
+CWE-664	JavaScript/TypeScript	js/regex-injection-more-sources	Regular expression injection with additional heuristic sources
+CWE-664	JavaScript/TypeScript	js/resource-exhaustion-more-sources	Resource exhaustion with additional heuristic sources
+CWE-664	JavaScript/TypeScript	js/xml-bomb-more-sources	XML internal entity expansion with additional heuristic sources
+CWE-664	JavaScript/TypeScript	js/user-controlled-bypass-more-sources	User-controlled bypass of security check with additional heuristic sources
+CWE-664	JavaScript/TypeScript	js/prototype-polluting-assignment-more-sources	Prototype-polluting assignment with additional heuristic sources
+CWE-665	JavaScript/TypeScript	js/missing-rate-limiting	Missing rate limiting
+CWE-665	JavaScript/TypeScript	js/resource-exhaustion	Resource exhaustion
+CWE-665	JavaScript/TypeScript	js/resource-exhaustion-more-sources	Resource exhaustion with additional heuristic sources
+CWE-668	JavaScript/TypeScript	js/unsafe-external-link	Potentially unsafe external link
+CWE-668	JavaScript/TypeScript	js/path-injection	Uncontrolled data used in path expression
+CWE-668	JavaScript/TypeScript	js/zipslip	Arbitrary file access during archive extraction ("Zip Slip")
+CWE-668	JavaScript/TypeScript	js/template-object-injection	Template Object Injection
+CWE-668	JavaScript/TypeScript	js/file-access-to-http	File data in outbound network request
+CWE-668	JavaScript/TypeScript	js/exposure-of-private-files	Exposure of private files
+CWE-668	JavaScript/TypeScript	js/cross-window-information-leak	Cross-window communication with unrestricted target origin
+CWE-668	JavaScript/TypeScript	js/stack-trace-exposure	Information exposure through a stack trace
+CWE-668	JavaScript/TypeScript	js/build-artifact-leak	Storage of sensitive information in build artifact
+CWE-668	JavaScript/TypeScript	js/clear-text-logging	Clear-text logging of sensitive information
+CWE-668	JavaScript/TypeScript	js/clear-text-storage-of-sensitive-data	Clear text storage of sensitive information
+CWE-668	JavaScript/TypeScript	js/password-in-configuration-file	Password in configuration file
+CWE-668	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials	CORS misconfiguration for credentials transfer
+CWE-668	JavaScript/TypeScript	js/insecure-temporary-file	Insecure temporary file
+CWE-668	JavaScript/TypeScript	js/sensitive-get-query	Sensitive data read from GET request
+CWE-668	JavaScript/TypeScript	js/empty-password-in-configuration-file	Empty password in configuration file
+CWE-668	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials-more-sources	CORS misconfiguration for credentials transfer with additional heuristic sources
+CWE-669	JavaScript/TypeScript	js/enabling-electron-insecure-content	Enabling Electron allowRunningInsecureContent
+CWE-669	JavaScript/TypeScript	js/insecure-dependency	Dependency download using unencrypted communication channel
+CWE-669	JavaScript/TypeScript	js/missing-x-frame-options	Missing X-Frame-Options HTTP header
+CWE-669	JavaScript/TypeScript	js/xxe	XML external entity expansion
+CWE-669	JavaScript/TypeScript	js/insecure-download	Download of sensitive file through insecure connection
+CWE-669	JavaScript/TypeScript	js/functionality-from-untrusted-source	Inclusion of functionality from an untrusted source
+CWE-669	JavaScript/TypeScript	js/http-to-file-access	Network data written to file
+CWE-669	JavaScript/TypeScript	js/xxe-more-sources	XML external entity expansion with additional heuristic sources
+CWE-670	JavaScript/TypeScript	js/useless-expression	Expression has no effect
+CWE-670	JavaScript/TypeScript	js/redundant-operation	Identical operands
+CWE-670	JavaScript/TypeScript	js/redundant-assignment	Self assignment
+CWE-670	JavaScript/TypeScript	js/unclear-operator-precedence	Unclear precedence of nested operators
+CWE-670	JavaScript/TypeScript	js/whitespace-contradicts-precedence	Whitespace contradicts operator precedence
+CWE-670	JavaScript/TypeScript	js/deletion-of-non-property	Deleting non-property
+CWE-670	JavaScript/TypeScript	js/misleading-indentation-of-dangling-else	Misleading indentation of dangling 'else'
+CWE-670	JavaScript/TypeScript	js/misleading-indentation-after-control-statement	Misleading indentation after control statement
+CWE-671	JavaScript/TypeScript	js/hardcoded-credentials	Hard-coded credentials
+CWE-674	JavaScript/TypeScript	js/xml-bomb	XML internal entity expansion
+CWE-674	JavaScript/TypeScript	js/xml-bomb-more-sources	XML internal entity expansion with additional heuristic sources
+CWE-676	JavaScript/TypeScript	js/eval-like-call	Call to eval-like DOM function
+CWE-676	JavaScript/TypeScript	js/eval-call	Use of eval
+CWE-681	JavaScript/TypeScript	js/shift-out-of-range	Shift out of range
+CWE-682	JavaScript/TypeScript	js/index-out-of-bounds	Off-by-one comparison against length
+CWE-684	JavaScript/TypeScript	js/missing-x-frame-options	Missing X-Frame-Options HTTP header
+CWE-685	JavaScript/TypeScript	js/superfluous-trailing-arguments	Superfluous trailing arguments
+CWE-691	JavaScript/TypeScript	js/enabling-electron-renderer-node-integration	Enabling Node.js integration for Electron web content renderers
+CWE-691	JavaScript/TypeScript	js/useless-expression	Expression has no effect
+CWE-691	JavaScript/TypeScript	js/redundant-operation	Identical operands
+CWE-691	JavaScript/TypeScript	js/redundant-assignment	Self assignment
+CWE-691	JavaScript/TypeScript	js/unclear-operator-precedence	Unclear precedence of nested operators
+CWE-691	JavaScript/TypeScript	js/whitespace-contradicts-precedence	Whitespace contradicts operator precedence
+CWE-691	JavaScript/TypeScript	js/deletion-of-non-property	Deleting non-property
+CWE-691	JavaScript/TypeScript	js/exit-from-finally	Jump from finally
+CWE-691	JavaScript/TypeScript	js/template-object-injection	Template Object Injection
+CWE-691	JavaScript/TypeScript	js/code-injection	Code injection
+CWE-691	JavaScript/TypeScript	js/actions/command-injection	Expression injection in Actions
+CWE-691	JavaScript/TypeScript	js/bad-code-sanitization	Improper code sanitization
+CWE-691	JavaScript/TypeScript	js/unsafe-code-construction	Unsafe code constructed from library input
+CWE-691	JavaScript/TypeScript	js/unsafe-dynamic-method-access	Unsafe dynamic method access
+CWE-691	JavaScript/TypeScript	js/file-system-race	Potential file system race condition
+CWE-691	JavaScript/TypeScript	js/server-crash	Server crash
+CWE-691	JavaScript/TypeScript	js/missing-rate-limiting	Missing rate limiting
+CWE-691	JavaScript/TypeScript	js/xml-bomb	XML internal entity expansion
+CWE-691	JavaScript/TypeScript	js/loop-bound-injection	Loop bound injection
+CWE-691	JavaScript/TypeScript	js/prototype-polluting-assignment	Prototype-polluting assignment
+CWE-691	JavaScript/TypeScript	js/prototype-pollution-utility	Prototype-polluting function
+CWE-691	JavaScript/TypeScript	js/prototype-pollution	Prototype-polluting merge call
+CWE-691	JavaScript/TypeScript	js/misleading-indentation-of-dangling-else	Misleading indentation of dangling 'else'
+CWE-691	JavaScript/TypeScript	js/inconsistent-loop-direction	Inconsistent direction of for loop
+CWE-691	JavaScript/TypeScript	js/misleading-indentation-after-control-statement	Misleading indentation after control statement
+CWE-691	JavaScript/TypeScript	js/actions/pull-request-target	Checkout of untrusted code in trusted context
+CWE-691	JavaScript/TypeScript	js/code-injection-more-sources	Code injection with additional heuristic sources
+CWE-691	JavaScript/TypeScript	js/xml-bomb-more-sources	XML internal entity expansion with additional heuristic sources
+CWE-691	JavaScript/TypeScript	js/prototype-polluting-assignment-more-sources	Prototype-polluting assignment with additional heuristic sources
+CWE-693	JavaScript/TypeScript	js/angular/insecure-url-whitelist	Insecure URL whitelist
+CWE-693	JavaScript/TypeScript	js/count-untrusted-data-external-api	Frequency counts for external APIs that are used with untrusted data
+CWE-693	JavaScript/TypeScript	js/incomplete-hostname-regexp	Incomplete regular expression for hostnames
+CWE-693	JavaScript/TypeScript	js/incomplete-url-scheme-check	Incomplete URL scheme check
+CWE-693	JavaScript/TypeScript	js/incomplete-url-substring-sanitization	Incomplete URL substring sanitization
+CWE-693	JavaScript/TypeScript	js/incorrect-suffix-check	Incorrect suffix check
+CWE-693	JavaScript/TypeScript	js/missing-origin-check	Missing origin verification in postMessage handler
+CWE-693	JavaScript/TypeScript	js/regex/missing-regexp-anchor	Missing regular expression anchor
+CWE-693	JavaScript/TypeScript	js/overly-large-range	Overly permissive regular expression range
+CWE-693	JavaScript/TypeScript	js/untrusted-data-to-external-api	Untrusted data passed to external API
+CWE-693	JavaScript/TypeScript	js/useless-regexp-character-escape	Useless regular-expression character escape
+CWE-693	JavaScript/TypeScript	js/bad-tag-filter	Bad HTML filtering regexp
+CWE-693	JavaScript/TypeScript	js/double-escaping	Double escaping or unescaping
+CWE-693	JavaScript/TypeScript	js/incomplete-html-attribute-sanitization	Incomplete HTML attribute sanitization
+CWE-693	JavaScript/TypeScript	js/incomplete-multi-character-sanitization	Incomplete multi-character sanitization
+CWE-693	JavaScript/TypeScript	js/incomplete-sanitization	Incomplete string escaping or encoding
+CWE-693	JavaScript/TypeScript	js/exposure-of-private-files	Exposure of private files
+CWE-693	JavaScript/TypeScript	js/disabling-certificate-validation	Disabling certificate validation
+CWE-693	JavaScript/TypeScript	js/insecure-dependency	Dependency download using unencrypted communication channel
+CWE-693	JavaScript/TypeScript	js/build-artifact-leak	Storage of sensitive information in build artifact
+CWE-693	JavaScript/TypeScript	js/clear-text-logging	Clear-text logging of sensitive information
+CWE-693	JavaScript/TypeScript	js/clear-text-storage-of-sensitive-data	Clear text storage of sensitive information
+CWE-693	JavaScript/TypeScript	js/password-in-configuration-file	Password in configuration file
+CWE-693	JavaScript/TypeScript	js/insufficient-key-size	Use of a weak cryptographic key
+CWE-693	JavaScript/TypeScript	js/biased-cryptographic-random	Creating biased random numbers from a cryptographically secure source
+CWE-693	JavaScript/TypeScript	js/weak-cryptographic-algorithm	Use of a broken or weak cryptographic algorithm
+CWE-693	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials	CORS misconfiguration for credentials transfer
+CWE-693	JavaScript/TypeScript	js/jwt-missing-verification	JWT missing secret or public key verification
+CWE-693	JavaScript/TypeScript	js/missing-token-validation	Missing CSRF middleware
+CWE-693	JavaScript/TypeScript	js/session-fixation	Failure to abandon session
+CWE-693	JavaScript/TypeScript	js/remote-property-injection	Remote property injection
+CWE-693	JavaScript/TypeScript	js/clear-text-cookie	Clear text transmission of sensitive cookie
+CWE-693	JavaScript/TypeScript	js/host-header-forgery-in-email-generation	Host header poisoning in email generation
+CWE-693	JavaScript/TypeScript	js/missing-rate-limiting	Missing rate limiting
+CWE-693	JavaScript/TypeScript	js/hardcoded-credentials	Hard-coded credentials
+CWE-693	JavaScript/TypeScript	js/user-controlled-bypass	User-controlled bypass of security check
+CWE-693	JavaScript/TypeScript	js/different-kinds-comparison-bypass	Comparison of user-controlled data of different kinds
+CWE-693	JavaScript/TypeScript	js/empty-password-in-configuration-file	Empty password in configuration file
+CWE-693	JavaScript/TypeScript	js/insufficient-password-hash	Use of password hash with insufficient computational effort
+CWE-693	JavaScript/TypeScript	js/untrusted-data-to-external-api-more-sources	Untrusted data passed to external API with additional heuristic sources
+CWE-693	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials-more-sources	CORS misconfiguration for credentials transfer with additional heuristic sources
+CWE-693	JavaScript/TypeScript	js/remote-property-injection-more-sources	Remote property injection with additional heuristic sources
+CWE-693	JavaScript/TypeScript	js/user-controlled-bypass-more-sources	User-controlled bypass of security check with additional heuristic sources
+CWE-697	JavaScript/TypeScript	js/angular/insecure-url-whitelist	Insecure URL whitelist
+CWE-697	JavaScript/TypeScript	js/incomplete-url-scheme-check	Incomplete URL scheme check
+CWE-697	JavaScript/TypeScript	js/bad-tag-filter	Bad HTML filtering regexp
+CWE-697	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials	CORS misconfiguration for credentials transfer
+CWE-697	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials-more-sources	CORS misconfiguration for credentials transfer with additional heuristic sources
+CWE-703	JavaScript/TypeScript	js/stack-trace-exposure	Information exposure through a stack trace
+CWE-703	JavaScript/TypeScript	js/server-crash	Server crash
+CWE-703	JavaScript/TypeScript	js/unvalidated-dynamic-method-call	Unvalidated dynamic method call
+CWE-704	JavaScript/TypeScript	js/implicit-operand-conversion	Implicit operand conversion
+CWE-704	JavaScript/TypeScript	js/shift-out-of-range	Shift out of range
+CWE-704	JavaScript/TypeScript	js/invalid-prototype-value	Invalid prototype value
+CWE-704	JavaScript/TypeScript	js/property-assignment-on-primitive	Assignment to property of primitive value
+CWE-704	JavaScript/TypeScript	js/type-confusion-through-parameter-tampering	Type confusion through parameter tampering
+CWE-705	JavaScript/TypeScript	js/exit-from-finally	Jump from finally
+CWE-705	JavaScript/TypeScript	js/server-crash	Server crash
+CWE-706	JavaScript/TypeScript	js/path-injection	Uncontrolled data used in path expression
+CWE-706	JavaScript/TypeScript	js/zipslip	Arbitrary file access during archive extraction ("Zip Slip")
+CWE-706	JavaScript/TypeScript	js/case-sensitive-middleware-path	Case-sensitive middleware path
+CWE-706	JavaScript/TypeScript	js/xxe	XML external entity expansion
+CWE-706	JavaScript/TypeScript	js/xxe-more-sources	XML external entity expansion with additional heuristic sources
+CWE-707	JavaScript/TypeScript	js/angular/disabling-sce	Disabling SCE
+CWE-707	JavaScript/TypeScript	js/disabling-electron-websecurity	Disabling Electron webSecurity
+CWE-707	JavaScript/TypeScript	js/enabling-electron-renderer-node-integration	Enabling Node.js integration for Electron web content renderers
+CWE-707	JavaScript/TypeScript	js/identity-replacement	Replacement of a substring with itself
+CWE-707	JavaScript/TypeScript	js/path-injection	Uncontrolled data used in path expression
+CWE-707	JavaScript/TypeScript	js/template-object-injection	Template Object Injection
+CWE-707	JavaScript/TypeScript	js/command-line-injection	Uncontrolled command line
+CWE-707	JavaScript/TypeScript	js/indirect-command-line-injection	Indirect uncontrolled command line
+CWE-707	JavaScript/TypeScript	js/second-order-command-line-injection	Second order command injection
+CWE-707	JavaScript/TypeScript	js/shell-command-injection-from-environment	Shell command built from environment values
+CWE-707	JavaScript/TypeScript	js/shell-command-constructed-from-input	Unsafe shell command constructed from library input
+CWE-707	JavaScript/TypeScript	js/unnecessary-use-of-cat	Unnecessary use of cat process
+CWE-707	JavaScript/TypeScript	js/xss-through-exception	Exception text reinterpreted as HTML
+CWE-707	JavaScript/TypeScript	js/reflected-xss	Reflected cross-site scripting
+CWE-707	JavaScript/TypeScript	js/stored-xss	Stored cross-site scripting
+CWE-707	JavaScript/TypeScript	js/html-constructed-from-input	Unsafe HTML constructed from library input
+CWE-707	JavaScript/TypeScript	js/unsafe-jquery-plugin	Unsafe jQuery plugin
+CWE-707	JavaScript/TypeScript	js/xss	Client-side cross-site scripting
+CWE-707	JavaScript/TypeScript	js/xss-through-dom	DOM text reinterpreted as HTML
+CWE-707	JavaScript/TypeScript	js/sql-injection	Database query built from user-controlled sources
+CWE-707	JavaScript/TypeScript	js/code-injection	Code injection
+CWE-707	JavaScript/TypeScript	js/actions/command-injection	Expression injection in Actions
+CWE-707	JavaScript/TypeScript	js/bad-code-sanitization	Improper code sanitization
+CWE-707	JavaScript/TypeScript	js/unsafe-code-construction	Unsafe code constructed from library input
+CWE-707	JavaScript/TypeScript	js/unsafe-dynamic-method-access	Unsafe dynamic method access
+CWE-707	JavaScript/TypeScript	js/bad-tag-filter	Bad HTML filtering regexp
+CWE-707	JavaScript/TypeScript	js/double-escaping	Double escaping or unescaping
+CWE-707	JavaScript/TypeScript	js/incomplete-html-attribute-sanitization	Incomplete HTML attribute sanitization
+CWE-707	JavaScript/TypeScript	js/incomplete-multi-character-sanitization	Incomplete multi-character sanitization
+CWE-707	JavaScript/TypeScript	js/incomplete-sanitization	Incomplete string escaping or encoding
+CWE-707	JavaScript/TypeScript	js/unsafe-html-expansion	Unsafe expansion of self-closing HTML tag
+CWE-707	JavaScript/TypeScript	js/log-injection	Log injection
+CWE-707	JavaScript/TypeScript	js/tainted-format-string	Use of externally-controlled format string
+CWE-707	JavaScript/TypeScript	js/client-side-unvalidated-url-redirection	Client-side URL redirect
+CWE-707	JavaScript/TypeScript	js/xpath-injection	XPath injection
+CWE-707	JavaScript/TypeScript	js/prototype-polluting-assignment	Prototype-polluting assignment
+CWE-707	JavaScript/TypeScript	js/prototype-pollution-utility	Prototype-polluting function
+CWE-707	JavaScript/TypeScript	js/prototype-pollution	Prototype-polluting merge call
+CWE-707	JavaScript/TypeScript	js/actions/pull-request-target	Checkout of untrusted code in trusted context
+CWE-707	JavaScript/TypeScript	js/command-line-injection-more-sources	Uncontrolled command line with additional heuristic sources
+CWE-707	JavaScript/TypeScript	js/xss-more-sources	Client-side cross-site scripting with additional heuristic sources
+CWE-707	JavaScript/TypeScript	js/sql-injection-more-sources	Database query built from user-controlled sources with additional heuristic sources
+CWE-707	JavaScript/TypeScript	js/code-injection-more-sources	Code injection with additional heuristic sources
+CWE-707	JavaScript/TypeScript	js/log-injection-more-sources	Log injection with additional heuristic sources
+CWE-707	JavaScript/TypeScript	js/tainted-format-string-more-sources	Use of externally-controlled format string with additional heuristic sources
+CWE-707	JavaScript/TypeScript	js/xpath-injection-more-sources	XPath injection with additional heuristic sources
+CWE-707	JavaScript/TypeScript	js/prototype-polluting-assignment-more-sources	Prototype-polluting assignment with additional heuristic sources
+CWE-710	JavaScript/TypeScript	js/todo-comment	TODO comment
+CWE-710	JavaScript/TypeScript	js/conflicting-html-attribute	Conflicting HTML element attributes
+CWE-710	JavaScript/TypeScript	js/malformed-html-id	Malformed id attribute
+CWE-710	JavaScript/TypeScript	js/eval-like-call	Call to eval-like DOM function
+CWE-710	JavaScript/TypeScript	js/variable-initialization-conflict	Conflicting variable initialization
+CWE-710	JavaScript/TypeScript	js/function-declaration-conflict	Conflicting function declarations
+CWE-710	JavaScript/TypeScript	js/useless-assignment-to-global	Useless assignment to global variable
+CWE-710	JavaScript/TypeScript	js/useless-assignment-to-local	Useless assignment to local variable
+CWE-710	JavaScript/TypeScript	js/overwritten-property	Overwritten property
+CWE-710	JavaScript/TypeScript	js/comparison-of-identical-expressions	Comparison of identical values
+CWE-710	JavaScript/TypeScript	js/comparison-with-nan	Comparison with NaN
+CWE-710	JavaScript/TypeScript	js/duplicate-condition	Duplicate 'if' condition
+CWE-710	JavaScript/TypeScript	js/duplicate-property	Duplicate property
+CWE-710	JavaScript/TypeScript	js/duplicate-switch-case	Duplicate switch case
+CWE-710	JavaScript/TypeScript	js/useless-expression	Expression has no effect
+CWE-710	JavaScript/TypeScript	js/comparison-between-incompatible-types	Comparison between inconvertible types
+CWE-710	JavaScript/TypeScript	js/redundant-operation	Identical operands
+CWE-710	JavaScript/TypeScript	js/redundant-assignment	Self assignment
+CWE-710	JavaScript/TypeScript	js/call-to-non-callable	Invocation of non-function
+CWE-710	JavaScript/TypeScript	js/property-access-on-non-object	Property access on null or undefined
+CWE-710	JavaScript/TypeScript	js/unneeded-defensive-code	Unneeded defensive code
+CWE-710	JavaScript/TypeScript	js/useless-type-test	Useless type test
+CWE-710	JavaScript/TypeScript	js/conditional-comment	Conditional comments
+CWE-710	JavaScript/TypeScript	js/eval-call	Use of eval
+CWE-710	JavaScript/TypeScript	js/non-standard-language-feature	Use of platform-specific language features
+CWE-710	JavaScript/TypeScript	js/for-in-comprehension	Use of for-in comprehension blocks
+CWE-710	JavaScript/TypeScript	js/superfluous-trailing-arguments	Superfluous trailing arguments
+CWE-710	JavaScript/TypeScript	js/yield-outside-generator	Yield in non-generator function
+CWE-710	JavaScript/TypeScript	js/node/assignment-to-exports-variable	Assignment to exports variable
+CWE-710	JavaScript/TypeScript	js/regex/unmatchable-caret	Unmatchable caret in regular expression
+CWE-710	JavaScript/TypeScript	js/regex/unmatchable-dollar	Unmatchable dollar in regular expression
+CWE-710	JavaScript/TypeScript	js/remote-property-injection	Remote property injection
+CWE-710	JavaScript/TypeScript	js/missing-x-frame-options	Missing X-Frame-Options HTTP header
+CWE-710	JavaScript/TypeScript	js/hardcoded-data-interpreted-as-code	Hard-coded data interpreted as code
+CWE-710	JavaScript/TypeScript	js/hardcoded-credentials	Hard-coded credentials
+CWE-710	JavaScript/TypeScript	js/http-to-file-access	Network data written to file
+CWE-710	JavaScript/TypeScript	js/useless-assignment-in-return	Return statement assigns local variable
+CWE-710	JavaScript/TypeScript	js/unreachable-statement	Unreachable statement
+CWE-710	JavaScript/TypeScript	js/trivial-conditional	Useless conditional
+CWE-710	JavaScript/TypeScript	js/remote-property-injection-more-sources	Remote property injection with additional heuristic sources
+CWE-754	JavaScript/TypeScript	js/unvalidated-dynamic-method-call	Unvalidated dynamic method call
+CWE-755	JavaScript/TypeScript	js/stack-trace-exposure	Information exposure through a stack trace
+CWE-758	JavaScript/TypeScript	js/conflicting-html-attribute	Conflicting HTML element attributes
+CWE-758	JavaScript/TypeScript	js/malformed-html-id	Malformed id attribute
+CWE-758	JavaScript/TypeScript	js/conditional-comment	Conditional comments
+CWE-758	JavaScript/TypeScript	js/non-standard-language-feature	Use of platform-specific language features
+CWE-758	JavaScript/TypeScript	js/for-in-comprehension	Use of for-in comprehension blocks
+CWE-758	JavaScript/TypeScript	js/yield-outside-generator	Yield in non-generator function
+CWE-770	JavaScript/TypeScript	js/missing-rate-limiting	Missing rate limiting
+CWE-770	JavaScript/TypeScript	js/resource-exhaustion	Resource exhaustion
+CWE-770	JavaScript/TypeScript	js/resource-exhaustion-more-sources	Resource exhaustion with additional heuristic sources
+CWE-776	JavaScript/TypeScript	js/xml-bomb	XML internal entity expansion
+CWE-776	JavaScript/TypeScript	js/xml-bomb-more-sources	XML internal entity expansion with additional heuristic sources
+CWE-783	JavaScript/TypeScript	js/unclear-operator-precedence	Unclear precedence of nested operators
+CWE-783	JavaScript/TypeScript	js/whitespace-contradicts-precedence	Whitespace contradicts operator precedence
+CWE-798	JavaScript/TypeScript	js/hardcoded-credentials	Hard-coded credentials
+CWE-799	JavaScript/TypeScript	js/missing-rate-limiting	Missing rate limiting
+CWE-807	JavaScript/TypeScript	js/user-controlled-bypass	User-controlled bypass of security check
+CWE-807	JavaScript/TypeScript	js/different-kinds-comparison-bypass	Comparison of user-controlled data of different kinds
+CWE-807	JavaScript/TypeScript	js/user-controlled-bypass-more-sources	User-controlled bypass of security check with additional heuristic sources
+CWE-827	JavaScript/TypeScript	js/xxe	XML external entity expansion
+CWE-827	JavaScript/TypeScript	js/xxe-more-sources	XML external entity expansion with additional heuristic sources
+CWE-829	JavaScript/TypeScript	js/insecure-dependency	Dependency download using unencrypted communication channel
+CWE-829	JavaScript/TypeScript	js/missing-x-frame-options	Missing X-Frame-Options HTTP header
+CWE-829	JavaScript/TypeScript	js/xxe	XML external entity expansion
+CWE-829	JavaScript/TypeScript	js/insecure-download	Download of sensitive file through insecure connection
+CWE-829	JavaScript/TypeScript	js/functionality-from-untrusted-source	Inclusion of functionality from an untrusted source
+CWE-829	JavaScript/TypeScript	js/xxe-more-sources	XML external entity expansion with additional heuristic sources
+CWE-830	JavaScript/TypeScript	js/functionality-from-untrusted-source	Inclusion of functionality from an untrusted source
+CWE-834	JavaScript/TypeScript	js/xml-bomb	XML internal entity expansion
+CWE-834	JavaScript/TypeScript	js/loop-bound-injection	Loop bound injection
+CWE-834	JavaScript/TypeScript	js/inconsistent-loop-direction	Inconsistent direction of for loop
+CWE-834	JavaScript/TypeScript	js/xml-bomb-more-sources	XML internal entity expansion with additional heuristic sources
+CWE-835	JavaScript/TypeScript	js/inconsistent-loop-direction	Inconsistent direction of for loop
+CWE-843	JavaScript/TypeScript	js/type-confusion-through-parameter-tampering	Type confusion through parameter tampering
+CWE-862	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials	CORS misconfiguration for credentials transfer
+CWE-862	JavaScript/TypeScript	js/empty-password-in-configuration-file	Empty password in configuration file
+CWE-862	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials-more-sources	CORS misconfiguration for credentials transfer with additional heuristic sources
+CWE-912	JavaScript/TypeScript	js/hardcoded-data-interpreted-as-code	Hard-coded data interpreted as code
+CWE-912	JavaScript/TypeScript	js/http-to-file-access	Network data written to file
+CWE-913	JavaScript/TypeScript	js/enabling-electron-renderer-node-integration	Enabling Node.js integration for Electron web content renderers
+CWE-913	JavaScript/TypeScript	js/template-object-injection	Template Object Injection
+CWE-913	JavaScript/TypeScript	js/code-injection	Code injection
+CWE-913	JavaScript/TypeScript	js/actions/command-injection	Expression injection in Actions
+CWE-913	JavaScript/TypeScript	js/bad-code-sanitization	Improper code sanitization
+CWE-913	JavaScript/TypeScript	js/unsafe-code-construction	Unsafe code constructed from library input
+CWE-913	JavaScript/TypeScript	js/unsafe-dynamic-method-access	Unsafe dynamic method access
+CWE-913	JavaScript/TypeScript	js/unsafe-deserialization	Deserialization of user-controlled data
+CWE-913	JavaScript/TypeScript	js/prototype-polluting-assignment	Prototype-polluting assignment
+CWE-913	JavaScript/TypeScript	js/prototype-pollution-utility	Prototype-polluting function
+CWE-913	JavaScript/TypeScript	js/prototype-pollution	Prototype-polluting merge call
+CWE-913	JavaScript/TypeScript	js/actions/pull-request-target	Checkout of untrusted code in trusted context
+CWE-913	JavaScript/TypeScript	js/code-injection-more-sources	Code injection with additional heuristic sources
+CWE-913	JavaScript/TypeScript	js/unsafe-deserialization-more-sources	Deserialization of user-controlled data with additional heuristic sources
+CWE-913	JavaScript/TypeScript	js/prototype-polluting-assignment-more-sources	Prototype-polluting assignment with additional heuristic sources
+CWE-915	JavaScript/TypeScript	js/prototype-polluting-assignment	Prototype-polluting assignment
+CWE-915	JavaScript/TypeScript	js/prototype-pollution-utility	Prototype-polluting function
+CWE-915	JavaScript/TypeScript	js/prototype-pollution	Prototype-polluting merge call
+CWE-915	JavaScript/TypeScript	js/prototype-polluting-assignment-more-sources	Prototype-polluting assignment with additional heuristic sources
+CWE-916	JavaScript/TypeScript	js/insufficient-password-hash	Use of password hash with insufficient computational effort
+CWE-918	JavaScript/TypeScript	js/client-side-request-forgery	Client-side request forgery
+CWE-918	JavaScript/TypeScript	js/request-forgery	Server-side request forgery
+CWE-918	JavaScript/TypeScript	javascript/ssrf	Uncontrolled data used in network request
+CWE-922	JavaScript/TypeScript	js/build-artifact-leak	Storage of sensitive information in build artifact
+CWE-922	JavaScript/TypeScript	js/clear-text-logging	Clear-text logging of sensitive information
+CWE-922	JavaScript/TypeScript	js/clear-text-storage-of-sensitive-data	Clear text storage of sensitive information
+CWE-922	JavaScript/TypeScript	js/password-in-configuration-file	Password in configuration file
+CWE-922	JavaScript/TypeScript	js/clear-text-cookie	Clear text transmission of sensitive cookie
+CWE-923	JavaScript/TypeScript	js/missing-origin-check	Missing origin verification in postMessage handler
+CWE-923	JavaScript/TypeScript	js/disabling-certificate-validation	Disabling certificate validation
+CWE-923	JavaScript/TypeScript	js/insecure-dependency	Dependency download using unencrypted communication channel
+CWE-940	JavaScript/TypeScript	js/missing-origin-check	Missing origin verification in postMessage handler
+CWE-942	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials	CORS misconfiguration for credentials transfer
+CWE-942	JavaScript/TypeScript	js/cors-misconfiguration-for-credentials-more-sources	CORS misconfiguration for credentials transfer with additional heuristic sources
+CWE-943	JavaScript/TypeScript	js/sql-injection	Database query built from user-controlled sources
+CWE-943	JavaScript/TypeScript	js/xpath-injection	XPath injection
+CWE-943	JavaScript/TypeScript	js/sql-injection-more-sources	Database query built from user-controlled sources with additional heuristic sources
+CWE-943	JavaScript/TypeScript	js/xpath-injection-more-sources	XPath injection with additional heuristic sources
+CWE-1004	JavaScript/TypeScript	js/client-exposed-cookie	Sensitive server cookie exposed to the client
+CWE-1022	JavaScript/TypeScript	js/unsafe-external-link	Potentially unsafe external link
+CWE-1176	JavaScript/TypeScript	js/angular/double-compilation	Double compilation
+CWE-1275	JavaScript/TypeScript	js/samesite-none-cookie	Sensitive cookie without SameSite restrictions
+CWE-1333	JavaScript/TypeScript	js/polynomial-redos	Polynomial regular expression used on uncontrolled data
+CWE-1333	JavaScript/TypeScript	js/redos	Inefficient regular expression
