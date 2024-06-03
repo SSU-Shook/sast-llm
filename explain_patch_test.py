@@ -11,9 +11,6 @@ import instructions
 import csv
 import sast_llm
 
-
-
-
 def main():
     # codeql csv 파일의 경로
     vulnerable_code_path = input("Enter the path of the vulnerable code: ")

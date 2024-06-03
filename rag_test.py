@@ -7,16 +7,8 @@
 from helper_utils import *
 from patch_utils import *
 import pandas as pd
-# from langchain_community.document_loaders import WebBaseLoader
 from bs4 import BeautifulSoup
 import requests
-# from lxml import etree
-
-
-# csv에서 취약점 name 빼온 다음에, CWE ID 매칭시키기
-
-# 취약점 이름을 받아서 CWE ID를 반환하는 함수
-
 
 '''
 CWE 번호와 CodeQL query 매칭
@@ -55,16 +47,12 @@ for vulnerability in vulnerabilities_dict:
         print(url)
         res = requests.get(url)
         soup = BeautifulSoup(res.content, 'lxml')
-        # dom = etree.HTML(str(soup))
-        # cwe_description = dom.xpath(f'//*[@id="oc_{CWE_ID}_Description"]/div/div/text()')[0]
         cwe_description = soup.select(f'#oc_{CWE_ID}_Description > div > div')[0].get_text()
         extended_description = soup.select_one(f'#oc_{CWE_ID}_Extended_Description > div > div').get_text()
         print(cwe_description)
         print('-'*50)
         print(extended_description)
-
         print('-'*50)
-        # Demonstrative Examples
         demonstrative = soup.select_one(f'#oc_{CWE_ID}_Demonstrative_Examples > div > div')
         if demonstrative is not None:
             demonstrative_text = demonstrative.get_text()

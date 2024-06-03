@@ -278,7 +278,7 @@ def profile_code_style(project_path, zero_shot_cot=False):
 프로젝트 경로와 codeql csv 파일 경로를 입력받아 취약점을 패치함
 원래 파일과 패치된 파일의 경로를 원소로 가지는 튜플로 이루어진 배열 반환
 '''
-def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None, zero_shot_cot=False):
+def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None, zero_shot_cot=False, rag=False):
     '''
     codeql csv 파일을 파싱하여 취약점 정보를 추출한다.
     '''
@@ -343,6 +343,54 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
 
         fild_id_list = upload_files(get_file_list_from_path_list([original_path_copied_path_dict[code_path]]))
         attachments_list = create_attachments_list(fild_id_list)
+        
+        # print(f'[*] DEBUG : {vulnerabilities}, {vulnerabilities[0]}, {vulnerabilities[0]["name"]}')
+
+        # if rag:
+        #     prompt = instructions.prompt_patch_vulnerabilities + \
+        #         get_cwe_description(vulnerabilities[0]['name'])
+        # else:
+        #     prompt = instructions.prompt_patch_vulnerabilities
+
+        # print(f'[DEBUG] len(prompt) : {len(prompt)}')
+
+
+
+        '''
+        rag 프롬프트 수행
+        '''
+        if rag:
+            print('[*] RAG Prompt')
+            rag_prompt = 'This is a description of vulnerability information. Learn the content.\n' + \
+                '**Do nothing in response to this command**' + \
+            get_cwe_description(vulnerabilities[0]['name'])
+        
+            message = client.beta.threads.messages.create(
+                thread_id=patch_thread.id,
+                role="user",
+                content=rag_prompt,
+            )
+
+            patch_run = client.beta.threads.runs.create(
+                thread_id=patch_thread.id,
+                assistant_id=get_assistant_id('rag_assistant')
+            )
+
+            start_time = time.time()
+
+            status = check_status(patch_run.id, patch_thread.id)
+            while status != 'completed':
+                time.sleep(1)
+                status = check_status(patch_run.id, patch_thread.id)
+
+            elapsed_time = time.time() - start_time
+            print("Elapsed time: {} minutes {} seconds".format(int((elapsed_time) // 60), int((elapsed_time) % 60)))
+            print(f'Status: {status}')
+            print('-'*50)
+
+        '''
+        패치 프롬프트 수행
+        '''
 
         prompt = instructions.prompt_patch_vulnerabilities
 
