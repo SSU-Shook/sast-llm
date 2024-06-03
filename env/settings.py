@@ -9,18 +9,3 @@ ASSISTANT_ID = {
     'patch_assistant': 'asst_DCU9yoVZnnd3UiGmWEyRnbZU',
     'explain_assistant': 'asst_v9hhDr5WMkbWP2kOCFt9ACIM'
 }
-
-CWE78_QUERY_NAME = [
-    'Uncontrolled command line',
-    'Indirect uncontrolled command line',
-    'Second order command injection',
-    'Shell command built from environment values',
-    'Unsafe shell command constructed from library input',
-    'Unnecessary use of `cat` process',
-    'Prototype-polluting assignment',
-    'Prototype-polluting function',
-    'Prototype-polluting merge call',
-    'Uncontrolled command line with additional heuristic sources',
-    'Prototype-polluting assignment with additional heuristic sources'
-]
-

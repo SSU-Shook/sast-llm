@@ -10,7 +10,7 @@ import pandas as pd
 # from langchain_community.document_loaders import WebBaseLoader
 from bs4 import BeautifulSoup
 import requests
-from lxml import etree
+# from lxml import etree
 
 
 # csv에서 취약점 name 빼온 다음에, CWE ID 매칭시키기
@@ -54,8 +54,9 @@ for cwe in cwe_lists:
     print(url)
     res = requests.get(url)
     soup = BeautifulSoup(res.content, 'lxml')
-    dom = etree.HTML(str(soup))
-    cwe_description = dom.xpath(f'//*[@id="oc_{CWE_ID}_Description"]/div/div/text()')[0]
+    # dom = etree.HTML(str(soup))
+    # cwe_description = dom.xpath(f'//*[@id="oc_{CWE_ID}_Description"]/div/div/text()')[0]
+    cwe_description = soup.select(f'#oc_{CWE_ID}_Description > div > div')[0].get_text()
     extended_description = soup.select_one(f'#oc_{CWE_ID}_Extended_Description > div > div').get_text()
     print(cwe_description)
     print('-'*50)
@@ -67,25 +68,3 @@ for cwe in cwe_lists:
     if demonstrative is not None:
         demonstrative_text = demonstrative.get_text()
         print(demonstrative_text)
-
-    
-
-
-# print(cwe_dict)
-
-# for key, value in cwe_dict.items():
-#     if key == 'Indirect uncontrolled command line':
-#         print(key, value)
-
-
-# vulnerabilities_dict_by_file = dict()
-# for vulnerability in vulnerabilities_dict:
-#     source_absolute_path = get_full_path(project_path, vulnerability['path'])
-#     if source_absolute_path in vulnerabilities_dict_by_file:
-#         vulnerabilities_dict_by_file[source_absolute_path].append(vulnerability)
-#     else:
-#         vulnerabilities_dict_by_file[source_absolute_path] = [vulnerability]
-# print("Vulnerabilities by file:")
-# for key, value in vulnerabilities_dict_by_file.items():
-#     print(key, value)
-# print("-"*50)
