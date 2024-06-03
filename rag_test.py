@@ -17,14 +17,6 @@ import requests
 
 # 취약점 이름을 받아서 CWE ID를 반환하는 함수
 
-csv_path = './npm-Dataset-main/CVE-2022-0841/output.csv'
-project_path = './npm-Dataset-main/CVE-2022-0841/'
-
-vulnerabilities_dict = parse_codeql_csv('./npm-Dataset-main/CVE-2022-0841/output.csv')
-print("Vulnerabilities:")
-for vulnerability in vulnerabilities_dict:
-    print(vulnerability)
-print("-"*50)
 
 '''
 CWE 번호와 CodeQL query 매칭
@@ -45,26 +37,35 @@ def get_cwe_id_from_query(query):
     # 여러개 배열로 뽑기
     return result
 
-cwe_lists = get_cwe_id_from_query('Indirect uncontrolled command line')
+'''
+CWE 번호로부터 취약점 설명을 가져오기
+'''
+csv_path = './npm-Dataset-main/CVE-2022-0841/output.csv'
+project_path = './npm-Dataset-main/CVE-2022-0841/'
 
-for cwe in cwe_lists:
-    print(cwe)
-    CWE_ID = cwe.split('-')[-1]
-    url = f'https://cwe.mitre.org/data/definitions/{CWE_ID}.html'
-    print(url)
-    res = requests.get(url)
-    soup = BeautifulSoup(res.content, 'lxml')
-    # dom = etree.HTML(str(soup))
-    # cwe_description = dom.xpath(f'//*[@id="oc_{CWE_ID}_Description"]/div/div/text()')[0]
-    cwe_description = soup.select(f'#oc_{CWE_ID}_Description > div > div')[0].get_text()
-    extended_description = soup.select_one(f'#oc_{CWE_ID}_Extended_Description > div > div').get_text()
-    print(cwe_description)
-    print('-'*50)
-    print(extended_description)
+vulnerabilities_dict = parse_codeql_csv('./npm-Dataset-main/CVE-2022-0841/output.csv')
+print("Vulnerabilities:")
+for vulnerability in vulnerabilities_dict:
+    cwe_lists = get_cwe_id_from_query(vulnerability['name'])
+    print("-"*50)
+    for cwe in cwe_lists:
+        print(cwe)
+        CWE_ID = cwe.split('-')[-1]
+        url = f'https://cwe.mitre.org/data/definitions/{CWE_ID}.html'
+        print(url)
+        res = requests.get(url)
+        soup = BeautifulSoup(res.content, 'lxml')
+        # dom = etree.HTML(str(soup))
+        # cwe_description = dom.xpath(f'//*[@id="oc_{CWE_ID}_Description"]/div/div/text()')[0]
+        cwe_description = soup.select(f'#oc_{CWE_ID}_Description > div > div')[0].get_text()
+        extended_description = soup.select_one(f'#oc_{CWE_ID}_Extended_Description > div > div').get_text()
+        print(cwe_description)
+        print('-'*50)
+        print(extended_description)
 
-    print('-'*50)
-    # Demonstrative Examples
-    demonstrative = soup.select_one(f'#oc_{CWE_ID}_Demonstrative_Examples > div > div')
-    if demonstrative is not None:
-        demonstrative_text = demonstrative.get_text()
-        print(demonstrative_text)
+        print('-'*50)
+        # Demonstrative Examples
+        demonstrative = soup.select_one(f'#oc_{CWE_ID}_Demonstrative_Examples > div > div')
+        if demonstrative is not None:
+            demonstrative_text = demonstrative.get_text()
+            print(demonstrative_text)
