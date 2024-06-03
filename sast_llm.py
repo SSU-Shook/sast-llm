@@ -362,9 +362,10 @@ def patch_vulnerabilities(project_path, codeql_csv_path, code_style_profile=None
         if rag:
             print('[*] RAG Prompt')
             rag_prompt = 'This is a description of vulnerability information. Learn the content.\n' + \
-                '**Do nothing in response to this command**' + \
-            get_cwe_description(vulnerabilities[0]['name'])
+                '**Do nothing in response to this command**' + get_cwe_description(vulnerabilities[0]['name'])
         
+            print(f'[DEBUG] len(rag_prompt) : {len(rag_prompt)}')
+
             message = client.beta.threads.messages.create(
                 thread_id=patch_thread.id,
                 role="user",
